@@ -1,45 +1,45 @@
-# Stripes Blood. High contrast. Every token passes WCAG AAA.
+# Stripes Blood. High contrast on oxblood black. Every token passes WCAG AAA.
 
 [colors.primary]
-background = "#000000"
+background = "#0f0405"
 foreground = "#ffffff"
 dim_foreground = "#b3b3b3"
 bright_foreground = "#ffffff"
 
 [colors.cursor]
-text = "#000000"
+text = "#0f0405"
 cursor = "#ffffff"
 
 [colors.vi_mode_cursor]
-text = "#000000"
+text = "#0f0405"
 cursor = "#ff6b6b"
 
 [colors.selection]
 text = "#ffffff"
-background = "#3a0d0d"
+background = "#401215"
 
 [colors.search.matches]
 foreground = "#ffffff"
-background = "#4d0f0f"
+background = "#5c1519"
 
 [colors.search.focused_match]
-foreground = "#000000"
+foreground = "#0f0405"
 background = "#ff6b6b"
 
 [colors.hints.start]
-foreground = "#000000"
+foreground = "#0f0405"
 background = "#ff6b6b"
 
 [colors.hints.end]
-foreground = "#000000"
+foreground = "#0f0405"
 background = "#e0e0e0"
 
 [colors.footer_bar]
 foreground = "#ffffff"
-background = "#0a0a0a"
+background = "#170708"
 
 [colors.normal]
-black = "#1a1a1a"
+black = "#240c0e"
 red = "#ff6b6b"
 green = "#d0d0d0"
 yellow = "#e8e8e8"

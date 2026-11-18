@@ -30,8 +30,8 @@
 
 | | |
 |:---:|:---:|
-| **Acto I: Night**<br><sub>El original. Carbón, hueso y sangre.</sub><br><img src="assets/previews/night.png" width="420"> | **Acto II: Bone**<br><sub>Pergamino viejo y tinta seca. La variante clara.</sub><br><img src="assets/previews/bone.png" width="420"> |
-| **Acto III: Void**<br><sub>Negro `#000` real para OLED. Los píxeles duermen en sus ataúdes.</sub><br><img src="assets/previews/void.png" width="420"> | **Acto IV: Blood**<br><sub>Alto contraste. Cada token pasa WCAG AAA.</sub><br><img src="assets/previews/blood.png" width="420"> |
+| **Acto I: Night**<br><sub>El original. Carbón azulado industrial, hueso y sangre.</sub><br><img src="assets/previews/night.png" width="420"> | **Acto II: Bone**<br><sub>Pergamino viejo y tinta seca. La variante clara.</sub><br><img src="assets/previews/bone.png" width="420"> |
+| **Acto III: Void**<br><sub>Negro `#000` real para OLED. Los píxeles duermen en sus ataúdes.</sub><br><img src="assets/previews/void.png" width="420"> | **Acto IV: Blood**<br><sub>Alto contraste sobre negro sangre seca. Cada token pasa WCAG AAA.</sub><br><img src="assets/previews/blood.png" width="420"> |
 
 ## Por qué Stripes
 

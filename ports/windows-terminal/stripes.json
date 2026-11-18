@@ -2,14 +2,14 @@
   "schemes": [
     {
       "name": "Stripes Night",
-      "background": "#101010",
+      "background": "#181c22",
       "foreground": "#ececec",
       "cursorColor": "#ffffff",
-      "selectionBackground": "#2a2a2a",
-      "black": "#1f1f1f",
-      "brightBlack": "#5c5c5c",
-      "red": "#d15858",
-      "brightRed": "#e57373",
+      "selectionBackground": "#353d49",
+      "black": "#29303a",
+      "brightBlack": "#5f6875",
+      "red": "#e36666",
+      "brightRed": "#f07f7f",
       "green": "#b0b0b0",
       "brightGreen": "#c8c8c8",
       "yellow": "#d4d4d4",
@@ -71,11 +71,11 @@
     },
     {
       "name": "Stripes Blood",
-      "background": "#000000",
+      "background": "#0f0405",
       "foreground": "#ffffff",
       "cursorColor": "#ffffff",
-      "selectionBackground": "#3a0d0d",
-      "black": "#1a1a1a",
+      "selectionBackground": "#401215",
+      "black": "#240c0e",
       "brightBlack": "#8a8a8a",
       "red": "#ff6b6b",
       "brightRed": "#ff8a8a",
@@ -101,13 +101,13 @@
         "useMica": false
       },
       "tab": {
-        "background": "#101010ff",
-        "unfocusedBackground": "#161616ff",
+        "background": "#181c22ff",
+        "unfocusedBackground": "#1e232aff",
         "showCloseButton": "hover"
       },
       "tabRow": {
-        "background": "#161616ff",
-        "unfocusedBackground": "#161616ff"
+        "background": "#1e232aff",
+        "unfocusedBackground": "#1e232aff"
       }
     },
     {
@@ -149,13 +149,13 @@
         "useMica": false
       },
       "tab": {
-        "background": "#000000ff",
-        "unfocusedBackground": "#0a0a0aff",
+        "background": "#0f0405ff",
+        "unfocusedBackground": "#170708ff",
         "showCloseButton": "hover"
       },
       "tabRow": {
-        "background": "#0a0a0aff",
-        "unfocusedBackground": "#0a0a0aff"
+        "background": "#170708ff",
+        "unfocusedBackground": "#170708ff"
       }
     }
   ]

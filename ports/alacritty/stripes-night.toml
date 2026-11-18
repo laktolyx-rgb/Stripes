@@ -1,46 +1,46 @@
-# Stripes Night. The original. Charcoal, bone and blood.
+# Stripes Night. The original. Industrial blue-charcoal, bone and blood.
 
 [colors.primary]
-background = "#101010"
+background = "#181c22"
 foreground = "#ececec"
-dim_foreground = "#7f7f7f"
+dim_foreground = "#8c95a1"
 bright_foreground = "#ffffff"
 
 [colors.cursor]
-text = "#101010"
+text = "#181c22"
 cursor = "#ffffff"
 
 [colors.vi_mode_cursor]
-text = "#101010"
-cursor = "#d15858"
+text = "#181c22"
+cursor = "#e36666"
 
 [colors.selection]
 text = "#ececec"
-background = "#2a2a2a"
+background = "#353d49"
 
 [colors.search.matches]
 foreground = "#ececec"
-background = "#3d1a1a"
+background = "#4a1f24"
 
 [colors.search.focused_match]
-foreground = "#101010"
-background = "#d15858"
+foreground = "#181c22"
+background = "#e36666"
 
 [colors.hints.start]
-foreground = "#101010"
-background = "#d15858"
+foreground = "#181c22"
+background = "#e36666"
 
 [colors.hints.end]
-foreground = "#101010"
-background = "#bdbdbd"
+foreground = "#181c22"
+background = "#c2c7ce"
 
 [colors.footer_bar]
 foreground = "#ececec"
-background = "#161616"
+background = "#1e232a"
 
 [colors.normal]
-black = "#1f1f1f"
-red = "#d15858"
+black = "#29303a"
+red = "#e36666"
 green = "#b0b0b0"
 yellow = "#d4d4d4"
 blue = "#8f8f8f"
@@ -49,8 +49,8 @@ cyan = "#9e9e9e"
 white = "#ececec"
 
 [colors.bright]
-black = "#5c5c5c"
-red = "#e57373"
+black = "#5f6875"
+red = "#f07f7f"
 green = "#c8c8c8"
 yellow = "#e6e6e6"
 blue = "#a8a8a8"

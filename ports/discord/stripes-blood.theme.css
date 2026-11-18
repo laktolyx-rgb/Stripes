@@ -2,34 +2,34 @@
  * @name Stripes Blood
  * @author Stripes contributors
  * @version 0.1.0
- * @description High contrast. Every token passes WCAG AAA. Black and white, and one drop of blood.
+ * @description High contrast on oxblood black. Every token passes WCAG AAA. Black and white, and one drop of blood.
  * @source https://github.com/laktolyx-rgb/Stripes
  * @website https://laktolyx-rgb.github.io/Stripes
  */
 
 :root, .theme-dark, .theme-light, .theme-darker, .theme-midnight, .visual-refresh {
   /* classic */
-  --background-primary: #000000;
-  --background-secondary: #0a0a0a;
-  --background-secondary-alt: #1a1a1a;
-  --background-tertiary: #0a0a0a;
-  --background-floating: #0a0a0a;
-  --background-nested-floating: #0a0a0a;
-  --background-accent: #3a0d0d;
-  --background-mobile-primary: #000000;
-  --background-mobile-secondary: #0a0a0a;
-  --background-modifier-hover: #3a0d0d80;
-  --background-modifier-active: #3a0d0dcc;
-  --background-modifier-selected: #3a0d0d;
-  --background-modifier-accent: #1a1a1a;
-  --background-message-hover: #1a1a1a99;
+  --background-primary: #0f0405;
+  --background-secondary: #170708;
+  --background-secondary-alt: #240c0e;
+  --background-tertiary: #170708;
+  --background-floating: #170708;
+  --background-nested-floating: #170708;
+  --background-accent: #401215;
+  --background-mobile-primary: #0f0405;
+  --background-mobile-secondary: #170708;
+  --background-modifier-hover: #40121580;
+  --background-modifier-active: #401215cc;
+  --background-modifier-selected: #401215;
+  --background-modifier-accent: #240c0e;
+  --background-message-hover: #240c0e99;
   --background-mentioned: #ff6b6b1a;
   --background-mentioned-hover: #ff6b6b26;
-  --channeltextarea-background: #0a0a0a;
-  --modal-background: #0a0a0a;
-  --modal-footer-background: #000000;
-  --input-background: #000000;
-  --deprecated-card-bg: #0a0a0a;
+  --channeltextarea-background: #170708;
+  --modal-background: #170708;
+  --modal-footer-background: #0f0405;
+  --input-background: #0f0405;
+  --deprecated-card-bg: #170708;
   --text-normal: #ffffff;
   --text-muted: #b3b3b3;
   --text-link: #ff6b6b;
@@ -47,7 +47,7 @@
   --channel-icon: #b3b3b3;
   --scrollbar-thin-thumb: #8a8a8a;
   --scrollbar-auto-thumb: #8a8a8a;
-  --scrollbar-auto-track: #0a0a0a;
+  --scrollbar-auto-track: #170708;
   --brand-experiment: #ff6b6b;
   --brand-500: #ff6b6b;
   --brand-560: #ff8a8a;
@@ -58,22 +58,22 @@
   --button-danger-background: #ff6b6b;
   --button-filled-brand-background: #ff6b6b;
   --button-filled-brand-background-hover: #ff8a8a;
-  --button-filled-brand-text: #000000;
-  --button-secondary-background: #1a1a1a;
+  --button-filled-brand-text: #0f0405;
+  --button-secondary-background: #240c0e;
   --control-brand-foreground: #ff6b6b;
   --focus-primary: #ff6b6b;
-  --border-subtle: #1a1a1a;
-  --border-faint: #1a1a1a;
+  --border-subtle: #240c0e;
+  --border-faint: #240c0e;
   --border-strong: #8a8a8a;
 
   /* 2025 visual refresh */
-  --background-base-lowest: #000000;
-  --background-base-lower: #0a0a0a;
-  --background-base-low: #0a0a0a;
-  --background-surface-high: #0a0a0a;
-  --background-surface-higher: #1a1a1a;
-  --background-surface-highest: #3a0d0d;
-  --chat-background-default: #000000;
+  --background-base-lowest: #0f0405;
+  --background-base-lower: #170708;
+  --background-base-low: #170708;
+  --background-surface-high: #170708;
+  --background-surface-higher: #240c0e;
+  --background-surface-highest: #401215;
+  --chat-background-default: #0f0405;
   --text-default: #ffffff;
   --text-subtle: #e0e0e0;
   --text-strong: #ffffff;

@@ -52,17 +52,17 @@ Classes: `bg-stripes-midnight text-stripes-bone border-stripes-blood/50`, which 
 
 | Name | Role | Night | Bone | Void | Blood |
 |---|---|---|---|---|---|
-| midnight | Background | `#101010` | `#ece7dc` | `#000000` | `#000000` |
-| crypt | Panels | `#161616` | `#e3ddd0` | `#080808` | `#0a0a0a` |
-| grave | Line / borders | `#1f1f1f` | `#d6cfbf` | `#121212` | `#1a1a1a` |
-| tomb | Selection | `#2a2a2a` | `#c9c0ad` | `#1f1f1f` | `#3a0d0d` |
-| ash | Guides (decoration) | `#5c5c5c` | `#a39a88` | `#4d4d4d` | `#8a8a8a` |
-| fog | Comments | `#7f7f7f` | `#626262` | `#787878` | `#b3b3b3` |
-| smoke | Functions | `#bdbdbd` | `#3d3d3d` | `#bdbdbd` | `#e0e0e0` |
+| midnight | Background | `#181c22` | `#ece7dc` | `#000000` | `#0f0405` |
+| crypt | Panels | `#1e232a` | `#e3ddd0` | `#080808` | `#170708` |
+| grave | Line / borders | `#29303a` | `#d6cfbf` | `#121212` | `#240c0e` |
+| tomb | Selection | `#353d49` | `#c9c0ad` | `#1f1f1f` | `#401215` |
+| ash | Guides (decoration) | `#5f6875` | `#a39a88` | `#4d4d4d` | `#8a8a8a` |
+| fog | Comments | `#8c95a1` | `#626262` | `#787878` | `#b3b3b3` |
+| smoke | Functions | `#c2c7ce` | `#3d3d3d` | `#bdbdbd` | `#e0e0e0` |
 | bone | Text | `#ececec` | `#1a1a1a` | `#ececec` | `#ffffff` |
 | ivory | Keywords | `#ffffff` | `#000000` | `#ffffff` | `#ffffff` |
-| blood | Accent / strings | `#d15858` | `#a32b2b` | `#d15858` | `#ff6b6b` |
-| ember | Errors | `#e57373` | `#8f1f1f` | `#e57373` | `#ff8a8a` |
-| scar | Accent background | `#3d1a1a` | `#e6c9c4` | `#2e0f0f` | `#4d0f0f` |
+| blood | Accent / strings | `#e36666` | `#a32b2b` | `#d15858` | `#ff6b6b` |
+| ember | Errors | `#f07f7f` | `#8f1f1f` | `#e57373` | `#ff8a8a` |
+| scar | Accent background | `#4a1f24` | `#e6c9c4` | `#2e0f0f` | `#5c1519` |
 
 MIT

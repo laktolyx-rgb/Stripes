@@ -1,11 +1,11 @@
-# Stripes Blood. High contrast. Every token passes WCAG AAA.
-background = #000000
+# Stripes Blood. High contrast on oxblood black. Every token passes WCAG AAA.
+background = #0f0405
 foreground = #ffffff
 cursor-color = #ffffff
-cursor-text = #000000
-selection-background = #3a0d0d
+cursor-text = #0f0405
+selection-background = #401215
 selection-foreground = #ffffff
-palette = 0=#1a1a1a
+palette = 0=#240c0e
 palette = 1=#ff6b6b
 palette = 2=#d0d0d0
 palette = 3=#e8e8e8

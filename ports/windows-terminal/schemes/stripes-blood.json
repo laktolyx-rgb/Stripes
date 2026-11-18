@@ -1,10 +1,10 @@
 {
   "name": "Stripes Blood",
-  "background": "#000000",
+  "background": "#0f0405",
   "foreground": "#ffffff",
   "cursorColor": "#ffffff",
-  "selectionBackground": "#3a0d0d",
-  "black": "#1a1a1a",
+  "selectionBackground": "#401215",
+  "black": "#240c0e",
   "brightBlack": "#8a8a8a",
   "red": "#ff6b6b",
   "brightRed": "#ff8a8a",
