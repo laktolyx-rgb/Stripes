@@ -6,7 +6,7 @@ Requires Neovim 0.9+.
 
 ```lua
 {
-  "laktolyx-rgb/stripes",
+  "laktolyx-rgb/Stripes",
   name = "stripes",
   lazy = false,
   priority = 1000,

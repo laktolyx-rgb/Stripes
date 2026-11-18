@@ -23,7 +23,7 @@ A template never hard-codes hex values. It asks for **roles** (`r.keyword`, `r.s
 ### Add a new app in 5 steps
 
 ```sh
-git clone https://github.com/laktolyx-rgb/stripes && cd stripes
+git clone https://github.com/laktolyx-rgb/Stripes && cd Stripes
 npm install
 
 npm run new -- my-app          # 1. scaffold templates/my-app/
@@ -108,7 +108,7 @@ Una plantilla nunca escribe colores fijos. Pide **roles** (`r.keyword`, `r.strin
 ### Agrega una app en 5 pasos
 
 ```sh
-git clone https://github.com/laktolyx-rgb/stripes && cd stripes
+git clone https://github.com/laktolyx-rgb/Stripes && cd Stripes
 npm install
 
 npm run new -- mi-app          # 1. crea templates/mi-app/

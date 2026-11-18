@@ -4,7 +4,7 @@ Stripes follows the [Contributor Covenant, version 2.1](https://www.contributor-
 
 Be kind. Spooky is welcome; cruelty is not. Harassment, discrimination or personal attacks lead to removal from the project.
 
-To report a problem, open a private [security advisory](https://github.com/laktolyx-rgb/stripes/security/advisories/new) or contact the maintainer through their GitHub profile.
+To report a problem, open a private [security advisory](https://github.com/laktolyx-rgb/Stripes/security/advisories/new) or contact the maintainer through their GitHub profile.
 
 ---
 

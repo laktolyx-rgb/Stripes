@@ -2,7 +2,7 @@
 
 ## One-time setup
 
-1. **GitHub repo:** create `laktolyx-rgb/stripes` (public) and push `main`.
+1. **GitHub repo:** create `laktolyx-rgb/Stripes` (public) and push `main`.
 2. **Pages:** *Settings → Pages → Source: GitHub Actions*. The site deploys on every push to `main`.
 3. **Discussions** (optional): *Settings → General → Features → Discussions*. The issue template links to them.
 4. **Secrets** (*Settings → Secrets and variables → Actions*). Each one is optional: if a secret is missing, that store is skipped.

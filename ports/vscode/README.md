@@ -30,4 +30,4 @@ Four variants:
 }
 ```
 
-Generated from the [Stripes palette](https://github.com/laktolyx-rgb/stripes). MIT.
+Generated from the [Stripes palette](https://github.com/laktolyx-rgb/Stripes). MIT.
