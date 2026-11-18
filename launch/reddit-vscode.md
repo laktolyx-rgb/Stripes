@@ -26,10 +26,10 @@ It comes in four variants:
 
 | | |
 |---|---|
-| **Night** | the original, `#101010` charcoal |
+| **Night** | the original, light industrial slate `#2b323c` |
 | **Bone** | light: warm parchment + dried ink |
-| **Void** | true `#000` for OLED |
-| **Blood** | high contrast, every token passes WCAG AAA |
+| **Void** | true `#000000` black for OLED |
+| **Blood** | deep oxblood, high contrast, every token passes WCAG AAA |
 
 A few details I cared about:
 

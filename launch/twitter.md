@@ -30,10 +30,10 @@ When you see red, it's a string, a link or an error. Nothing else.
 ```
 Four variants:
 
-🌑 Night: the original, #101010
+🌑 Night: the original, light industrial slate #2b323c
 📜 Bone: parchment + dried ink (light)
-⬛ Void: true black for OLED
-🩸 Blood: high contrast, every token passes WCAG AAA
+⬛ Void: true black #000000 for OLED
+🩸 Blood: deep oxblood, high contrast, every token passes WCAG AAA
 ```
 
 **4/** (screenshot of `npm run validate` output)
@@ -42,7 +42,7 @@ Contrast isn't a vibe, it's a test.
 
 CI computes WCAG contrast for every text color on every surface. Below 4.5:1 (7:1 for Blood), the build fails.
 
-My original red failed. It's #d15858 now.
+My original red failed. It's #d15858 now, and #f58080 on Night's lighter slate.
 ```
 
 **5/** (attach `assets/brand/scene.svg` rendered, or the hero screenshot)
@@ -94,7 +94,7 @@ strings → el único rojo en pantalla
 ```
 El contraste no es "a ojo": es un test.
 Si un color baja de WCAG AA (AAA en la variante Blood), el build falla.
-Mi rojo original no pasó. Ahora es #d15858.
+Mi rojo original no pasó. Ahora es #d15858, y #f58080 sobre la pizarra clara de Night.
 ```
 
 **4/**

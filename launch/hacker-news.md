@@ -29,7 +29,7 @@ The part I think is interesting is how it's put together:
 
 - Each app port is a small JS module that only sees roles, never hex values. A zero-dependency builder renders all of them into ports/, and `npm run check` fails CI if anyone edits generated files by hand or forgets to rebuild. Right now that covers VS Code, Neovim, Zed, JetBrains, Ghostty, Kitty, Alacritty, Windows Terminal, Obsidian and Discord.
 
-- A validator computes WCAG contrast for every text role against every surface it can appear on. The build fails below 4.5:1 (7:1 for the high-contrast variant). The original accent I picked (#c94c4c) failed on panel backgrounds at 4.41:1, which is how it ended up as #d15858.
+- A validator computes WCAG contrast for every text role against every surface it can appear on. The build fails below 4.5:1 (7:1 for the high-contrast variant). The original accent I picked (#c94c4c) failed on panel backgrounds at 4.41:1, which is how it ended up as #d15858 (Night's later, lighter slate base pushed it to #f58080 for the same reason).
 
 - The landing page's playground uses Shiki with the generated VS Code theme JSON, so the preview is the real thing.
 
