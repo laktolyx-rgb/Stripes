@@ -11,5 +11,5 @@
 | [Neovim](./nvim) | editor | lazy.nvim: see ports/nvim/README.md |
 | [Obsidian](./obsidian) | app | Settings → Appearance → Themes → Manage → "Stripes" |
 | [Visual Studio Code](./vscode) | editor | Marketplace / Open VSX: search "Stripes" |
-| [Windows Terminal](./windows-terminal) | terminal | Copy `stripes.json` to `%LOCALAPPDATA%MicrosoftWindows TerminalFragmentsStripes` |
+| [Windows Terminal](./windows-terminal) | terminal | Copy `stripes.json` to `%LOCALAPPDATA%\Microsoft\Windows Terminal\Fragments\Stripes\` |
 | [Zed](./zed) | editor | Zed → Extensions → search "Stripes" |

@@ -1,0 +1,46 @@
+---
+import data from '../generated/ports.json';
+const repo = 'https://github.com/stripes-theme/stripes/tree/main/ports';
+const order = ['editor', 'terminal', 'app'];
+const ports = [...data.ports].sort((a, b) => order.indexOf(a.category) - order.indexOf(b.category) || a.name.localeCompare(b.name));
+const md = (s: string) => s.replace(/`([^`]+)`/g, '<code>$1</code>');
+---
+<section id="ports">
+  <div class="wrap">
+    <p class="eyebrow">Ports</p>
+    <h2>Haunt every window</h2>
+    <p class="lede">{ports.length} apps, all generated from the same palette. Missing one? Run <code>npm run new -- your-app</code> and send a pull request.</p>
+    <div class="grid">
+      {ports.map((p) => (
+        <a class="port" href={`${repo}/${p.id}`}>
+          <span class="cat">{p.category}</span>
+          <b>{p.name}</b>
+          <span class="how" set:html={md(p.install ?? '')}></span>
+        </a>
+      ))}
+      <a class="port add" href="https://github.com/stripes-theme/stripes/blob/main/CONTRIBUTING.md">
+        <span class="cat">you</span><b>+ Add an app</b><span class="how">Contributing guide →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+  .port {
+    display: grid; gap: 6px; align-content: start; padding: 18px; min-height: 140px; text-decoration: none;
+    background: var(--stripes-crypt); border: 1px solid var(--stripes-grave); color: var(--stripes-foreground);
+    position: relative; overflow: hidden; transition: border-color .2s, transform .15s;
+  }
+  .port::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; transform: scaleX(0); transform-origin: left;
+    background: repeating-linear-gradient(90deg, var(--stripes-accent) 0 8px, transparent 8px 14px); transition: transform .3s;
+  }
+  .port:hover { border-color: var(--stripes-ash); transform: translateY(-3px); color: var(--stripes-foreground); }
+  .port:hover::after { transform: scaleX(1); }
+  .cat { font: 11px var(--mono); text-transform: uppercase; letter-spacing: .2em; color: var(--stripes-fog); }
+  b { font: 400 26px/1.1 var(--display); color: var(--stripes-ivory); }
+  .how { font-size: 14px; color: var(--stripes-smoke); line-height: 1.45; }
+  .how :global(code) { font-size: 12px; color: var(--stripes-accent); word-break: break-word; }
+  .add { border-style: dashed; }
+</style>

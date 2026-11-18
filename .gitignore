@@ -3,3 +3,6 @@ dist/
 *.vsix
 *.tgz
 .DS_Store
+
+# Wallpapers are large: rendered in CI and attached to GitHub Releases
+assets/wallpapers/

@@ -1,0 +1,16 @@
+{
+  "name": "@stripes-theme/site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "dev": "npm run sync && astro dev",
+    "build": "npm run sync && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@stripes-theme/palette": "^0.1.0",
+    "astro": "^7.4.5",
+    "shiki": "^3.23.0"
+  }
+}

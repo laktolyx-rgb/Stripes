@@ -1,0 +1,47 @@
+/* Site styles. Colors come only from @stripes-theme/palette CSS variables. */
+:root {
+  --serif: 'IM Fell English', 'Iowan Old Style', Georgia, serif;
+  --display: 'IM Fell English SC', 'IM Fell English', Georgia, serif;
+  --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --wrap: min(1120px, 100% - 32px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--stripes-background);
+  color: var(--stripes-foreground);
+  font: 18px/1.6 var(--serif);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .4s, color .4s;
+}
+a { color: var(--stripes-accent); text-underline-offset: 3px; }
+a:hover { color: var(--stripes-ember); }
+::selection { background: var(--stripes-tomb); color: var(--stripes-ivory); }
+:focus-visible { outline: 2px solid var(--stripes-accent); outline-offset: 3px; }
+code, pre, kbd { font-family: var(--mono); }
+img, svg { max-width: 100%; }
+
+.wrap { width: var(--wrap); margin-inline: auto; }
+section { padding: 96px 0; border-top: 1px solid var(--stripes-grave); }
+.eyebrow { font: 13px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--stripes-accent); margin: 0 0 12px; }
+h2 { font: 400 clamp(32px, 5vw, 52px)/1.1 var(--display); margin: 0 0 16px; color: var(--stripes-ivory); }
+.lede { color: var(--stripes-smoke); max-width: 60ch; margin: 0 0 40px; font-size: 20px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px;
+  font: 700 15px/1 var(--mono); letter-spacing: .04em; text-decoration: none;
+  border: 2px solid var(--stripes-ivory); color: var(--stripes-ivory); background: transparent;
+  cursor: pointer; transition: transform .15s, background .2s, color .2s;
+}
+.btn:hover { transform: translateY(-2px); background: var(--stripes-ivory); color: var(--stripes-background); }
+.btn.primary { background: var(--stripes-accent); border-color: var(--stripes-accent); color: var(--stripes-background); }
+.btn.primary:hover { background: var(--stripes-ember); border-color: var(--stripes-ember); }
+
+/* barber stripe divider */
+.stripe-rule { height: 6px; background: repeating-linear-gradient(90deg, var(--stripes-foreground) 0 10px, transparent 10px 20px); opacity: .35; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

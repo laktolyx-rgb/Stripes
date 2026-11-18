@@ -2,7 +2,7 @@ export const meta = {
   name: 'Windows Terminal',
   category: 'terminal',
   homepage: 'https://github.com/microsoft/terminal',
-  install: 'Copy `stripes.json` to `%LOCALAPPDATA%\Microsoft\Windows Terminal\Fragments\Stripes\`',
+  install: String.raw`Copy "stripes.json" to "%LOCALAPPDATA%\Microsoft\Windows Terminal\Fragments\Stripes\"`.replace(/"/g, '`'),
 };
 
 const WT = { black: 'black', red: 'red', green: 'green', yellow: 'yellow', blue: 'blue', magenta: 'purple', cyan: 'cyan', white: 'white' };

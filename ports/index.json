@@ -55,6 +55,7 @@
         "gradle.properties",
         "settings.gradle.kts",
         "src/main/resources/META-INF/plugin.xml",
+        "src/main/resources/META-INF/pluginIcon.svg",
         "src/main/resources/themes/stripes_blood.theme.json",
         "src/main/resources/themes/stripes_blood.xml",
         "src/main/resources/themes/stripes_bone.theme.json",
@@ -134,7 +135,7 @@
       "name": "Windows Terminal",
       "category": "terminal",
       "homepage": "https://github.com/microsoft/terminal",
-      "install": "Copy `stripes.json` to `%LOCALAPPDATA%MicrosoftWindows TerminalFragmentsStripes`",
+      "install": "Copy `stripes.json` to `%LOCALAPPDATA%\\Microsoft\\Windows Terminal\\Fragments\\Stripes\\`",
       "files": [
         "README.md",
         "schemes/stripes-blood.json",

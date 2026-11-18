@@ -1,0 +1,135 @@
+---
+const langs = ['typescript', 'tsx', 'javascript', 'python', 'rust', 'go', 'lua', 'css', 'html', 'json', 'bash', 'markdown'];
+---
+<section id="playground">
+  <div class="wrap">
+    <p class="eyebrow">Playground</p>
+    <h2>Paste your code, see it in black and white</h2>
+    <p class="lede">Highlighted with the generated VS Code theme, so what you see here is what you get in the editor. Edit freely.</p>
+
+    <div class="bar">
+      <label>Language
+        <select id="pg-lang">{langs.map((l) => <option value={l} selected={l === 'typescript'}>{l}</option>)}</select>
+      </label>
+      <label class="toggle"><input type="checkbox" id="pg-all" /> Compare all four</label>
+      <span class="status" id="pg-status">loading highlighter…</span>
+    </div>
+
+    <div class="editor" id="pg-editor">
+      <div class="out" id="pg-out" aria-hidden="true"></div>
+      <textarea id="pg-src" spellcheck="false" aria-label="Code to preview" autocapitalize="off" autocomplete="off"></textarea>
+    </div>
+    <div class="compare" id="pg-compare" hidden></div>
+  </div>
+</section>
+
+<script>
+  import type { Highlighter } from 'shiki';
+  const themeFiles = import.meta.glob('../generated/themes/*.json', { eager: true, import: 'default' });
+  const ORDER = ['night', 'bone', 'void', 'blood'];
+  const themes = (Object.values(themeFiles) as any[]).sort((a, b) =>
+    ORDER.indexOf(a.name.replace('Stripes ', '').toLowerCase()) - ORDER.indexOf(b.name.replace('Stripes ', '').toLowerCase()));
+  const byVariant = Object.fromEntries(themes.map((t) => [t.name.replace('Stripes ', '').toLowerCase(), t]));
+
+  const SAMPLES: Record<string, string> = {
+    typescript: `// The undertaker's ledger
+import { readFile } from 'node:fs/promises';
+
+interface Grave { id: number; name: string; risen?: boolean }
+
+export async function exhume(path: string, hour = 13): Promise<Grave[]> {
+  const graves: Grave[] = JSON.parse(await readFile(path, 'utf8'));
+  if (!graves.length) throw new Error(\`No graves at \${hour}:00\`);
+  return graves.filter((g) => /^[A-Z]/.test(g.name) && !g.risen);
+}`,
+    python: `# A very quiet house
+from dataclasses import dataclass
+
+@dataclass
+class Ghost:
+    name: str
+    haunts: int = 13
+
+def summon(names: list[str]) -> list[Ghost]:
+    """Raise every ghost whose name is long enough."""
+    return [Ghost(n) for n in names if len(n) > 3]`,
+    rust: `// Bones never lie
+#[derive(Debug, Clone)]
+struct Skeleton<'a> { name: &'a str, bones: u16 }
+
+fn count(skels: &[Skeleton]) -> u32 {
+    skels.iter().map(|s| s.bones as u32).sum::<u32>() // 206 each
+}`,
+  };
+
+  const src = document.getElementById('pg-src') as HTMLTextAreaElement;
+  const out = document.getElementById('pg-out')!;
+  const lang = document.getElementById('pg-lang') as HTMLSelectElement;
+  const all = document.getElementById('pg-all') as HTMLInputElement;
+  const compare = document.getElementById('pg-compare')!;
+  const status = document.getElementById('pg-status')!;
+  let hl: Highlighter | null = null;
+  src.value = SAMPLES.typescript;
+
+  const current = () => byVariant[document.documentElement.dataset.stripes || 'night'] ?? byVariant.night;
+
+  async function ensureLang(l: string) {
+    if (!hl!.getLoadedLanguages().includes(l)) await hl!.loadLanguage(l as any);
+  }
+  async function render() {
+    if (!hl) return;
+    await ensureLang(lang.value);
+    const code = src.value + (src.value.endsWith('\n') ? ' ' : '');
+    out.innerHTML = hl.codeToHtml(code, { lang: lang.value, theme: current().name });
+    if (!all.checked) { compare.hidden = true; return; }
+    compare.hidden = false;
+    compare.innerHTML = themes.map((t) =>
+      `<figure><figcaption>${t.name}</figcaption>${hl!.codeToHtml(src.value, { lang: lang.value, theme: t.name })}</figure>`).join('');
+  }
+  let pending = 0;
+  const schedule = () => { cancelAnimationFrame(pending); pending = requestAnimationFrame(render); };
+
+  src.addEventListener('input', schedule);
+  src.addEventListener('scroll', () => { out.scrollTop = src.scrollTop; out.scrollLeft = src.scrollLeft; });
+  src.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') { e.preventDefault(); document.execCommand('insertText', false, '  '); }
+  });
+  lang.addEventListener('change', () => { if (SAMPLES[lang.value] && !src.dataset.edited) src.value = SAMPLES[lang.value]; schedule(); });
+  src.addEventListener('input', () => { src.dataset.edited = '1'; }, { once: true });
+  all.addEventListener('change', schedule);
+  addEventListener('stripes:variant', schedule);
+
+  // Load the highlighter only when the playground scrolls near the viewport.
+  new IntersectionObserver(async ([e], obs) => {
+    if (!e.isIntersecting) return;
+    obs.disconnect();
+    const { createHighlighter } = await import('shiki');
+    hl = await createHighlighter({ themes, langs: ['typescript'] });
+    status.textContent = '';
+    render();
+  }, { rootMargin: '400px' }).observe(src);
+</script>
+
+<style>
+  .bar { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; font: 14px var(--mono); color: var(--stripes-smoke); }
+  .bar select { margin-left: 8px; font: inherit; background: var(--stripes-crypt); color: var(--stripes-foreground); border: 1px solid var(--stripes-grave); padding: 6px 8px; }
+  .toggle { display: flex; gap: 8px; align-items: center; cursor: pointer; }
+  .toggle input { accent-color: var(--stripes-accent); }
+  .status { color: var(--stripes-fog); font-style: italic; }
+  .editor { position: relative; height: 380px; border: 1px solid var(--stripes-grave); background: var(--stripes-background); }
+  .out, textarea {
+    position: absolute; inset: 0; margin: 0; padding: 18px 20px; overflow: auto;
+    font: 15px/1.6 var(--mono); tab-size: 2; white-space: pre; letter-spacing: 0;
+  }
+  .out :global(pre) { margin: 0; padding: 0; background: transparent !important; font: inherit; }
+  .out :global(code) { font: inherit; }
+  textarea {
+    resize: none; border: 0; outline: none; background: transparent; color: transparent;
+    caret-color: var(--stripes-cursor); -webkit-text-fill-color: transparent;
+  }
+  textarea::selection { background: color-mix(in srgb, var(--stripes-accent) 30%, transparent); }
+  .compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: 12px; margin-top: 12px; }
+  .compare :global(figure) { margin: 0; border: 1px solid var(--stripes-grave); }
+  .compare :global(figcaption) { font: italic 14px var(--serif); padding: 8px 14px; color: var(--stripes-smoke); background: var(--stripes-crypt); }
+  .compare :global(pre) { margin: 0; padding: 14px; font: 13px/1.55 var(--mono); overflow: auto; }
+</style>

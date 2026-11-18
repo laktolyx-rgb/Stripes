@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 300" role="img" aria-label="Mortimer, the Stripes cat">
+  <title>Mortimer</title>
+  <style>
+    .ink { fill: var(--m-ink, #101010); }
+    .line { stroke: var(--m-line, #ececec); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .eye { fill: var(--m-line, #ececec); }
+    .blood { fill: var(--m-blood, #d15858); }
+  </style>
+  <!-- tail: a bone-colored stroke with ink dashes on top makes the rings -->
+  <g transform="translate(8 6)">
+  <path id="tail" d="M176 262 C232 262 246 210 222 182 C204 160 200 128 222 112 C244 96 262 118 248 134 C240 143 228 138 230 128"
+        fill="none" stroke="var(--m-line, #ececec)" stroke-width="20" stroke-linecap="round"/>
+  <path d="M176 262 C232 262 246 210 222 182 C204 160 200 128 222 112 C244 96 262 118 248 134 C240 143 228 138 230 128"
+        fill="none" stroke="var(--m-ink, #101010)" stroke-width="13" stroke-dasharray="11 11" stroke-linecap="butt"/>
+  </g>
+  <!-- body -->
+  <path class="ink line" d="M84 272 C70 226 72 176 100 150 L160 150 C188 176 192 226 178 272 Z"/>
+  <!-- front legs: long and thin -->
+  <path class="ink line" d="M106 196 L102 272 M154 196 L158 272"/>
+  <path class="ink line" d="M92 272 Q102 264 114 272 M146 272 Q158 264 170 272"/>
+  <!-- head -->
+  <path class="ink line" d="M84 98 L72 30 L110 70 Q130 64 150 70 L188 30 L176 98 Q182 148 130 154 Q78 148 84 98 Z"/>
+  <!-- inner ears -->
+  <path d="M84 52 L98 72 M176 52 L162 72" class="line" stroke-opacity=".5"/>
+  <!-- eyes: big, hollow, slightly mismatched -->
+  <circle class="eye" cx="108" cy="104" r="17"/>
+  <circle class="eye" cx="153" cy="102" r="20"/>
+  <circle class="ink" cx="112" cy="107" r="5"/>
+  <circle class="ink" cx="158" cy="105" r="6"/>
+  <!-- stitched grin -->
+  <path class="line" fill="none" d="M110 132 Q130 142 150 132"/>
+  <path class="line" fill="none" stroke-width="3" d="M116 130 L114 140 M124 134 L123 144 M132 135 L132 145 M140 134 L141 144 M146 131 L148 140"/>
+  <!-- whiskers -->
+  <path class="line" fill="none" stroke-width="2.5" d="M86 122 L52 116 M86 128 L54 134 M174 122 L208 114 M174 128 L206 136"/>
+  <!-- collar + blood drop charm -->
+  <path d="M100 152 Q130 164 160 152" fill="none" stroke="var(--m-blood, #d15858)" stroke-width="7" stroke-linecap="round"/>
+  <path class="blood" d="M130 160 C130 160 120 174 120 181 a10 10 0 0 0 20 0 C140 174 130 160 130 160 Z"/>
+</svg>
