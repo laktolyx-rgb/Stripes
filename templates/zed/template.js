@@ -161,7 +161,7 @@ function style(v, h) {
   };
 }
 
-export function render({ variants, h, palette }) {
+export function render({ variants, h, palette, config }) {
   return {
     'themes/stripes.json': h.json({
       $schema: 'https://zed.dev/schema/themes/v0.2.0.json',
@@ -175,7 +175,7 @@ version = "${palette.version}"
 schema_version = 1
 authors = ["Stripes contributors"]
 description = "A gothic black & white theme with a single drop of blood."
-repository = "https://github.com/stripes-theme/stripes"
+repository = "${config.repoUrl}"
 `,
   };
 }

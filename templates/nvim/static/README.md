@@ -6,7 +6,7 @@ Requires Neovim 0.9+.
 
 ```lua
 {
-  "stripes-theme/stripes",
+  "{{slug}}",
   name = "stripes",
   lazy = false,
   priority = 1000,

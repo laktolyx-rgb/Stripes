@@ -14,11 +14,12 @@
     "build": "npm run build:palette && npm run build:ports",
     "check": "node packages/builder/src/cli.js check",
     "new": "node packages/builder/src/cli.js new",
-    "package:vscode": "cd ports/vscode && npx -y @vscode/vsce@3.2.1 package --no-dependencies --out ../../stripes-vscode.vsix",
+    "package:vscode": "cd ports/vscode && npx -y @vscode/vsce@4.1.0 package --no-dependencies --out ../../stripes-vscode.vsix",
     "test": "node --test test/",
     "site:dev": "npm run dev -w @stripes-theme/site",
     "site:build": "npm run build -w @stripes-theme/site",
-    "assets": "node scripts/render-assets.mjs"
+    "assets": "node scripts/render-assets.mjs",
+    "version:set": "node scripts/version.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -6,7 +6,6 @@ export const meta = {
   install: 'Marketplace / Open VSX: search "Stripes"',
 };
 
-const EXT_VERSION = '0.1.0';
 
 function workbench(v, h) {
   const r = v.roles, c = Object.fromEntries(Object.entries(v.colors).map(([k, x]) => [k, x.hex]));
@@ -425,24 +424,24 @@ function theme(v, h) {
   };
 }
 
-export function render({ variants, h, palette }) {
+export function render({ variants, h, palette, config }) {
   const files = {};
   for (const v of variants) files[`themes/stripes-${v.id}-color-theme.json`] = h.json(theme(v, h));
   files['package.json'] = h.json({
-    name: 'stripes',
+    name: config.vscode.name,
     displayName: 'Stripes Theme',
     description: 'A gothic black & white theme with a single drop of blood. Night, Bone, Void and Blood (high contrast).',
-    version: EXT_VERSION,
-    publisher: 'stripes-theme',
+    version: palette.version,
+    publisher: config.vscode.publisher,
     license: 'MIT',
     icon: 'icon.png',
     galleryBanner: { color: '#101010', theme: 'dark' },
     engines: { vscode: '^1.70.0' },
     categories: ['Themes'],
     keywords: ['theme', 'dark', 'light', 'gothic', 'monochrome', 'black and white', 'high contrast', 'oled', 'minimal', 'red'],
-    repository: { type: 'git', url: 'https://github.com/stripes-theme/stripes', directory: 'ports/vscode' },
-    bugs: { url: 'https://github.com/stripes-theme/stripes/issues' },
-    homepage: 'https://github.com/stripes-theme/stripes#readme',
+    repository: { type: 'git', url: config.repoUrl, directory: 'ports/vscode' },
+    bugs: { url: `${config.repoUrl}/issues` },
+    homepage: config.site,
     contributes: {
       themes: variants.map((v) => ({
         label: v.name,

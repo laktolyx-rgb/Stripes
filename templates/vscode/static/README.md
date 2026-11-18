@@ -13,7 +13,7 @@ Four variants:
 
 ## Install
 
-- **Marketplace:** `ext install stripes-theme.stripes`
+- **Marketplace:** `ext install {{vscodeId}}`
 - **Open VSX** (VSCodium, Cursor, Windsurf): search "Stripes"
 - Then: `Ctrl+K Ctrl+T` → *Stripes Night*
 
@@ -30,4 +30,4 @@ Four variants:
 }
 ```
 
-Generated from the [Stripes palette](https://github.com/stripes-theme/stripes). MIT.
+Generated from the [Stripes palette]({{repoUrl}}). MIT.

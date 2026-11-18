@@ -1,7 +1,7 @@
 <idea-plugin>
-  <id>com.github.stripes-theme.stripes</id>
+  <id>com.github.laktolyx-rgb.stripes</id>
   <name>Stripes Theme</name>
-  <vendor url="https://github.com/stripes-theme/stripes">Stripes</vendor>
+  <vendor url="https://github.com/laktolyx-rgb/stripes">Stripes</vendor>
   <description><![CDATA[
     A gothic black &amp; white theme with a single drop of blood.<br/>
     Four variants: <b>Night</b>, <b>Bone</b> (light), <b>Void</b> (OLED) and <b>Blood</b> (high contrast, WCAG AAA).

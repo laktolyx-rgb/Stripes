@@ -1,4 +1,5 @@
 ---
+import { config } from '../lib/config';
 import mascot from '../../../assets/brand/mascot.svg?raw';
 ---
 <footer class="the-end">
@@ -7,7 +8,7 @@ import mascot from '../../../assets/brand/mascot.svg?raw';
     <div class="cat" set:html={mascot} aria-hidden="true"></div>
     <p class="credits">
       Directed by the community · Colors by <code>palette.json</code> · Mortimer as himself<br />
-      MIT licensed · <a href="https://github.com/stripes-theme/stripes">GitHub</a> · <a href="https://www.npmjs.com/package/@stripes-theme/palette">npm</a> · press <kbd>1</kbd>–<kbd>4</kbd> to change the reel
+      MIT licensed · <a href={config.repoUrl}>GitHub</a> · <a href={config.npmUrl}>npm</a> · press <kbd>1</kbd>–<kbd>4</kbd> to change the reel
     </p>
     <p class="fine">No cats were harmed. One was re-inked about 12 times a second.</p>
   </div>

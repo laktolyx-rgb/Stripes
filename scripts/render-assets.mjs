@@ -1,9 +1,9 @@
 // Renders brand assets from palette.json + assets/brand/*.svg using headless Chrome.
-//   node scripts/render-assets.mjs [icons|social|wallpapers|gif|all]
+//   node scripts/render-assets.mjs [icons|social|readme|wallpapers|gif|all]
 // Outputs:
 //   assets/brand/mark-{64,128,256,512,1024}.png, mascot-1024.png, logo.png, logo-light.png
 //   templates/vscode/static/icon.png, templates/jetbrains/static/.../META-INF/pluginIcon.svg
-//   assets/social-preview.png (1280x640), assets/banner.png (1600x500)
+//   assets/social-preview.png (1280x640), assets/banner.png (1600x500), assets/previews/*.png
 //   assets/wallpapers/<variant>/stripes-<variant>-<WxH>.png
 //   assets/demo.gif (needs ffmpeg on PATH)
 import { mkdirSync, readFileSync, writeFileSync, copyFileSync, rmSync } from 'node:fs';
@@ -129,6 +129,21 @@ async function wallpapers() {
   }
 }
 
+// ---------------------------------------------------------------- README images
+async function readme() {
+  for (const v of variants) {
+    await shoot(page(v, `<div style="padding:34px 40px">${sheet(v, await codeHtml(SNIPPET, v.id))}</div>`, SHEET_CSS),
+      A(`previews/${v.id}.png`), 900, 400);
+    const order = Object.keys(v.colors);
+    await shoot(page(v, `<div style="display:flex;gap:10px;padding:22px 20px;align-items:flex-start">
+      ${order.map((c) => `<div style="flex:1;text-align:center">
+        <div style="height:56px;background:${v.colors[c].hex};border:2px solid var(--bone);filter:url(#ink)"></div>
+        <div style="font:700 17px 'Grenze Gotisch',serif;color:var(--ivory);margin-top:8px">${c}</div>
+        <div class="mono" style="font-size:11px;color:var(--fog)">${v.colors[c].hex}</div></div>`).join('')}
+      </div>`), A(`previews/palette-${v.id}.png`), 1100, 150);
+  }
+}
+
 // ---------------------------------------------------------------- demo GIF
 async function gif() {
   const W = 880, H = 520, FPS = 12;
@@ -199,7 +214,7 @@ async function gif() {
   console.log('  ✓', path.relative(ROOT, out), `(${frames} frames)`);
 }
 
-const jobs = { icons, social, wallpapers, gif };
+const jobs = { icons, social, readme, wallpapers, gif };
 const want = process.argv[2] ?? 'all';
 browser = await launch();
 try {

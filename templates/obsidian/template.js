@@ -93,7 +93,7 @@ function vars(v, h) {
   --graph-line: ${c.ash};`;
 }
 
-export function render({ variants, variant, h, palette }) {
+export function render({ variants, variant, h, palette, config }) {
   const night = variant('night'), bone = variant('bone');
   const darkExtras = variants.filter((v) => v.dark && v.id !== 'night');
   const css = `/* @settings
@@ -161,7 +161,7 @@ body.stripes-stripes-header .HyperMD-header-1::after {
       version: palette.version,
       minAppVersion: '1.0.0',
       author: 'Stripes contributors',
-      authorUrl: 'https://github.com/stripes-theme/stripes',
+      authorUrl: config.repoUrl,
     }),
   };
 }

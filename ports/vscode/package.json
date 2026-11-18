@@ -30,13 +30,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/stripes-theme/stripes",
+    "url": "https://github.com/laktolyx-rgb/stripes",
     "directory": "ports/vscode"
   },
   "bugs": {
-    "url": "https://github.com/stripes-theme/stripes/issues"
+    "url": "https://github.com/laktolyx-rgb/stripes/issues"
   },
-  "homepage": "https://github.com/stripes-theme/stripes#readme",
+  "homepage": "https://laktolyx-rgb.github.io/stripes",
   "contributes": {
     "themes": [
       {

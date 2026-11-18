@@ -1,6 +1,7 @@
 ---
+import { config } from '../lib/config';
 import data from '../generated/ports.json';
-const repo = 'https://github.com/stripes-theme/stripes/tree/main/ports';
+const repo = `${config.treeUrl}/ports`;
 const order = ['editor', 'terminal', 'app'];
 const ports = [...data.ports].sort((a, b) => order.indexOf(a.category) - order.indexOf(b.category) || a.name.localeCompare(b.name));
 const md = (s: string) => s.replace(/`([^`]+)`/g, '<code>$1</code>');
@@ -20,7 +21,7 @@ const md = (s: string) => s.replace(/`([^`]+)`/g, '<code>$1</code>');
           <span class="admit" aria-hidden="true">ADMIT ONE</span>
         </a>
       ))}
-      <a class="stub you" href="https://github.com/stripes-theme/stripes/blob/main/CONTRIBUTING.md" style="--r:2deg">
+      <a class="stub you" href={`${config.blobUrl}/CONTRIBUTING.md`} style="--r:2deg">
         <span class="no">Nº ???</span><span class="cat">you</span><b>Your app here</b><span class="how">Read the contributing guide →</span>
         <span class="admit" aria-hidden="true">ADMIT ONE</span>
       </a>

@@ -1,0 +1,27 @@
+name: "🩸 Bug"
+description: Something looks wrong in a port. / Algo se ve mal en un port.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App & version / App y versión
+      placeholder: "VS Code 1.10x, Neovim 0.11…"
+    validations:
+      required: true
+  - type: dropdown
+    id: variant
+    attributes:
+      label: Variant / Variante
+      multiple: true
+      options: [Night, Bone, Void, Blood]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong? / ¿Qué está mal?
+      description: Screenshots help a lot. / Las capturas ayudan mucho.
+    validations:
+      required: true

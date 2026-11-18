@@ -7,7 +7,7 @@ export const meta = {
   install: 'Vencord: Themes → Online Themes → paste the raw URL of `stripes-night.theme.css`',
 };
 
-function css(v, h, palette) {
+function css(v, h, palette, config) {
   const c = Object.fromEntries(Object.entries(v.colors).map(([k, x]) => [k, x.hex]));
   const a = h.withAlpha;
   return `/**
@@ -15,8 +15,8 @@ function css(v, h, palette) {
  * @author Stripes contributors
  * @version ${palette.version}
  * @description ${v.description} Black and white, and one drop of blood.
- * @source https://github.com/stripes-theme/stripes
- * @website https://github.com/stripes-theme/stripes
+ * @source ${config.repoUrl}
+ * @website ${config.site}
  */
 
 :root, .theme-dark, .theme-light, .theme-darker, .theme-midnight, .visual-refresh {
@@ -104,6 +104,6 @@ code, pre { font-family: 'JetBrains Mono', Consolas, monospace !important; }
 `;
 }
 
-export function render({ variants, h, palette }) {
-  return Object.fromEntries(variants.map((v) => [`stripes-${v.id}.theme.css`, css(v, h, palette)]));
+export function render({ variants, h, palette, config }) {
+  return Object.fromEntries(variants.map((v) => [`stripes-${v.id}.theme.css`, css(v, h, palette, config)]));
 }

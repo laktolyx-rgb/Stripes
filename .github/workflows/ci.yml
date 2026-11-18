@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Palette, ports, site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: WCAG contrast
+        run: npm run validate
+
+      - name: Ports are in sync with palette + templates
+        run: npm run check
+
+      - run: npm test
+
+      - name: Build palette package
+        run: npm run build:palette
+
+      - name: Build site
+        run: npm run site:build
+
+      - name: Package VS Code extension
+        run: npm run package:vscode
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: stripes-vscode
+          path: stripes-vscode.vsix
+
+  jetbrains:
+    name: JetBrains plugin
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: current
+      - name: Build plugin
+        working-directory: ports/jetbrains
+        run: gradle buildPlugin --no-daemon
+      - uses: actions/upload-artifact@v7
+        with:
+          name: stripes-jetbrains
+          path: ports/jetbrains/build/distributions/*.zip

@@ -1,0 +1,32 @@
+name: "🕯️ New port / Nuevo port"
+description: Request or announce Stripes for a new app.
+title: "[port] "
+labels: ["port"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Want to build it yourself? `npm run new -- <app>` and read [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md). It takes minutes.
+        ¿Quieres hacerlo tú? `npm run new -- <app>` y lee [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).
+  - type: input
+    id: app
+    attributes:
+      label: App
+      placeholder: "e.g. WezTerm, Helix, Firefox, Slack…"
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Theme docs / Documentación de temas
+      description: Link to how the app loads themes.
+      placeholder: https://…
+  - type: dropdown
+    id: who
+    attributes:
+      label: Who builds it? / ¿Quién lo hace?
+      options:
+        - I will open a PR / Yo abro el PR
+        - I'm requesting it / Solo lo pido
+    validations:
+      required: true

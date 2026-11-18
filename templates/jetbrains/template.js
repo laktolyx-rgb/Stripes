@@ -205,16 +205,16 @@ ${bgAttr('WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES', c.tomb, effect(c.ivory, 1))}
 `;
 }
 
-export function render({ variants, h, palette }) {
+export function render({ variants, h, palette, config }) {
   const files = {};
   for (const v of variants) {
     files[`src/main/resources/themes/stripes_${v.id}.theme.json`] = h.json(uiTheme(v));
     files[`src/main/resources/themes/stripes_${v.id}.xml`] = scheme(v);
   }
   files['src/main/resources/META-INF/plugin.xml'] = `<idea-plugin>
-  <id>com.github.stripes-theme.stripes</id>
+  <id>${config.jetbrains.id}</id>
   <name>Stripes Theme</name>
-  <vendor url="https://github.com/stripes-theme/stripes">Stripes</vendor>
+  <vendor url="${config.repoUrl}">Stripes</vendor>
   <description><![CDATA[
     A gothic black &amp; white theme with a single drop of blood.<br/>
     Four variants: <b>Night</b>, <b>Bone</b> (light), <b>Void</b> (OLED) and <b>Blood</b> (high contrast, WCAG AAA).
@@ -225,6 +225,6 @@ ${variants.map((v) => `    <themeProvider id="stripes-${v.id}" path="/themes/str
   </extensions>
 </idea-plugin>
 `;
-  files['gradle.properties'] = `pluginVersion=${palette.version}\npluginSinceBuild=233\norg.gradle.jvmargs=-Xmx1g\n`;
+  files['gradle.properties'] = `pluginVersion=${palette.version}\npluginSinceBuild=233\npluginGroup=${config.jetbrains.group}\norg.gradle.jvmargs=-Xmx1g\n`;
   return files;
 }

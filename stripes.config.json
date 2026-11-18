@@ -1,0 +1,10 @@
+{
+  "$comment": "Project identity. Change these to move the repo (e.g. to an organization); run `npm run build` afterwards.",
+  "owner": "laktolyx-rgb",
+  "repo": "stripes",
+  "branch": "main",
+  "site": "https://laktolyx-rgb.github.io/stripes",
+  "vscode": { "publisher": "stripes-theme", "name": "stripes" },
+  "jetbrains": { "id": "com.github.laktolyx-rgb.stripes", "group": "com.github.laktolyx-rgb" },
+  "npm": { "palette": "@stripes-theme/palette" }
+}

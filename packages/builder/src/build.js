@@ -3,7 +3,7 @@
 // A template is a plain ES module:
 //   export const meta = { name, category, homepage, install }
 //   export function render(ctx) { return { 'relative/file.ext': 'contents', ... } }
-// ctx = { variants, variant(id), palette, h, meta }
+// ctx = { variants, variant(id), palette, config, h, meta }
 // Files in templates/<app>/static/ are copied verbatim (handwritten code, images, docs).
 // ports/<app>/ is fully generated: build wipes it, and check fails if it differs.
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
@@ -11,6 +11,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { ROOT, loadPalette, resolveAll } from './palette.js';
 import * as color from './color.js';
+import { loadConfig, fill } from './config.js';
 
 export const TEMPLATES = path.join(ROOT, 'templates');
 export const PORTS = path.join(ROOT, 'ports');
@@ -42,13 +43,19 @@ function walk(dir, base = dir) {
   });
 }
 
-export async function renderApp(app, palette = loadPalette()) {
+const TEXT = /\.(md|txt|lua|kts|toml|json|css|xml|yml|yaml)$/i;
+
+export async function renderApp(app, palette = loadPalette(), config = loadConfig()) {
   const dir = path.join(TEMPLATES, app);
   const mod = await import(pathToFileURL(path.join(dir, 'template.js')).href);
   const variants = resolveAll(palette);
-  const ctx = { variants, variant: (id) => variants.find((v) => v.id === id), palette, h, meta: mod.meta };
+  const ctx = { variants, variant: (id) => variants.find((v) => v.id === id), palette, config, h, meta: mod.meta };
   const files = new Map();
-  for (const rel of walk(path.join(dir, 'static'))) files.set(rel, readFileSync(path.join(dir, 'static', rel)));
+  for (const rel of walk(path.join(dir, 'static'))) {
+    const buf = readFileSync(path.join(dir, 'static', rel));
+    // static text files may use {{repoUrl}}, {{rawUrl}}, {{vscodeId}}, ... from stripes.config.json
+    files.set(rel, TEXT.test(rel) ? Buffer.from(fill(buf.toString('utf8'), config)) : buf);
+  }
   for (const [rel, content] of Object.entries(await mod.render(ctx))) {
     const text = String(content);
     files.set(rel, Buffer.from(text.endsWith('\n') ? text : text + '\n'));
