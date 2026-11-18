@@ -1,0 +1,28 @@
+{
+  "name": "@stripes-theme/palette",
+  "version": "0.1.0",
+  "description": "Stripes: a gothic black & white palette with a single drop of blood. JS, TypeScript, CSS variables and Tailwind.",
+  "license": "MIT",
+  "type": "module",
+  "keywords": ["theme", "palette", "colors", "gothic", "dark-theme", "monochrome", "tailwind", "css-variables", "stripes"],
+  "homepage": "https://github.com/stripes-theme/stripes#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/stripes-theme/stripes.git", "directory": "packages/palette" },
+  "files": ["dist", "README.md"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js", "require": "./dist/index.cjs" },
+    "./palette.json": "./dist/palette.json",
+    "./css": "./dist/css/stripes.css",
+    "./css/*": "./dist/css/*",
+    "./tailwind": { "import": "./dist/tailwind.js", "require": "./dist/tailwind.cjs" },
+    "./tailwind.css": "./dist/tailwind.css"
+  },
+  "sideEffects": ["*.css"],
+  "scripts": {
+    "build": "node build.js",
+    "prepack": "node build.js"
+  },
+  "publishConfig": { "access": "public" }
+}

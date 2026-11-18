@@ -1,0 +1,14 @@
+{
+  "name": "stripes-monorepo",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "validate": "node packages/builder/src/cli.js validate",
+    "validate:all": "node packages/builder/src/cli.js validate --verbose",
+    "build:palette": "npm run build -w @stripes-theme/palette",
+    "build": "npm run build:palette",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" }
+}
