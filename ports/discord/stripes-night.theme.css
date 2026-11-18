@@ -2,90 +2,90 @@
  * @name Stripes Night
  * @author Stripes contributors
  * @version 0.1.0
- * @description The original. Industrial blue-charcoal, bone and blood. Black and white, and one drop of blood.
+ * @description The original. Light industrial slate, bone and blood. Black and white, and one drop of blood.
  * @source https://github.com/laktolyx-rgb/Stripes
  * @website https://laktolyx-rgb.github.io/Stripes
  */
 
 :root, .theme-dark, .theme-light, .theme-darker, .theme-midnight, .visual-refresh {
   /* classic */
-  --background-primary: #181c22;
-  --background-secondary: #1e232a;
-  --background-secondary-alt: #29303a;
-  --background-tertiary: #1e232a;
-  --background-floating: #1e232a;
-  --background-nested-floating: #1e232a;
-  --background-accent: #353d49;
-  --background-mobile-primary: #181c22;
-  --background-mobile-secondary: #1e232a;
-  --background-modifier-hover: #353d4980;
-  --background-modifier-active: #353d49cc;
-  --background-modifier-selected: #353d49;
-  --background-modifier-accent: #29303a;
-  --background-message-hover: #29303a99;
-  --background-mentioned: #e366661a;
-  --background-mentioned-hover: #e3666626;
-  --channeltextarea-background: #1e232a;
-  --modal-background: #1e232a;
-  --modal-footer-background: #181c22;
-  --input-background: #181c22;
-  --deprecated-card-bg: #1e232a;
-  --text-normal: #ececec;
-  --text-muted: #8c95a1;
-  --text-link: #e36666;
-  --text-positive: #ececec;
+  --background-primary: #2b323c;
+  --background-secondary: #323a45;
+  --background-secondary-alt: #3d4652;
+  --background-tertiary: #323a45;
+  --background-floating: #323a45;
+  --background-nested-floating: #323a45;
+  --background-accent: #4a5463;
+  --background-mobile-primary: #2b323c;
+  --background-mobile-secondary: #323a45;
+  --background-modifier-hover: #4a546380;
+  --background-modifier-active: #4a5463cc;
+  --background-modifier-selected: #4a5463;
+  --background-modifier-accent: #3d4652;
+  --background-message-hover: #3d465299;
+  --background-mentioned: #f580801a;
+  --background-mentioned-hover: #f5808026;
+  --channeltextarea-background: #323a45;
+  --modal-background: #323a45;
+  --modal-footer-background: #2b323c;
+  --input-background: #2b323c;
+  --deprecated-card-bg: #323a45;
+  --text-normal: #eef0f3;
+  --text-muted: #a3acb8;
+  --text-link: #f58080;
+  --text-positive: #eef0f3;
   --text-warning: #ffffff;
-  --text-danger: #f07f7f;
-  --text-brand: #e36666;
+  --text-danger: #ff9c9c;
+  --text-brand: #f58080;
   --header-primary: #ffffff;
-  --header-secondary: #c2c7ce;
-  --interactive-normal: #c2c7ce;
-  --interactive-hover: #ececec;
+  --header-secondary: #d0d5dc;
+  --interactive-normal: #d0d5dc;
+  --interactive-hover: #eef0f3;
   --interactive-active: #ffffff;
-  --interactive-muted: #5f6875;
-  --channels-default: #8c95a1;
-  --channel-icon: #8c95a1;
-  --scrollbar-thin-thumb: #5f6875;
-  --scrollbar-auto-thumb: #5f6875;
-  --scrollbar-auto-track: #1e232a;
-  --brand-experiment: #e36666;
-  --brand-500: #e36666;
-  --brand-560: #f07f7f;
-  --mention-foreground: #e36666;
-  --mention-background: #e3666626;
-  --info-danger-foreground: #f07f7f;
-  --status-danger: #f07f7f;
-  --button-danger-background: #e36666;
-  --button-filled-brand-background: #e36666;
-  --button-filled-brand-background-hover: #f07f7f;
-  --button-filled-brand-text: #181c22;
-  --button-secondary-background: #29303a;
-  --control-brand-foreground: #e36666;
-  --focus-primary: #e36666;
-  --border-subtle: #29303a;
-  --border-faint: #29303a;
-  --border-strong: #5f6875;
+  --interactive-muted: #6f7a89;
+  --channels-default: #a3acb8;
+  --channel-icon: #a3acb8;
+  --scrollbar-thin-thumb: #6f7a89;
+  --scrollbar-auto-thumb: #6f7a89;
+  --scrollbar-auto-track: #323a45;
+  --brand-experiment: #f58080;
+  --brand-500: #f58080;
+  --brand-560: #ff9c9c;
+  --mention-foreground: #f58080;
+  --mention-background: #f5808026;
+  --info-danger-foreground: #ff9c9c;
+  --status-danger: #ff9c9c;
+  --button-danger-background: #f58080;
+  --button-filled-brand-background: #f58080;
+  --button-filled-brand-background-hover: #ff9c9c;
+  --button-filled-brand-text: #2b323c;
+  --button-secondary-background: #3d4652;
+  --control-brand-foreground: #f58080;
+  --focus-primary: #f58080;
+  --border-subtle: #3d4652;
+  --border-faint: #3d4652;
+  --border-strong: #6f7a89;
 
   /* 2025 visual refresh */
-  --background-base-lowest: #181c22;
-  --background-base-lower: #1e232a;
-  --background-base-low: #1e232a;
-  --background-surface-high: #1e232a;
-  --background-surface-higher: #29303a;
-  --background-surface-highest: #353d49;
-  --chat-background-default: #181c22;
-  --text-default: #ececec;
-  --text-subtle: #c2c7ce;
+  --background-base-lowest: #2b323c;
+  --background-base-lower: #323a45;
+  --background-base-low: #323a45;
+  --background-surface-high: #323a45;
+  --background-surface-higher: #3d4652;
+  --background-surface-highest: #4a5463;
+  --chat-background-default: #2b323c;
+  --text-default: #eef0f3;
+  --text-subtle: #d0d5dc;
   --text-strong: #ffffff;
-  --icon-default: #c2c7ce;
+  --icon-default: #d0d5dc;
   --icon-strong: #ffffff;
 }
 
 /* Monochrome role colors would break meaning; we only tint the user's own mentions in blood. */
-::selection { background: #e3666659; color: #ffffff; }
+::selection { background: #f5808059; color: #ffffff; }
 code, pre { font-family: 'JetBrains Mono', Consolas, monospace !important; }
 .hljs-keyword, .hljs-built_in { color: #ffffff; font-weight: 700; }
-.hljs-string { color: #e36666; }
-.hljs-comment { color: #8c95a1; font-style: italic; }
-.hljs-title, .hljs-function { color: #c2c7ce; }
+.hljs-string { color: #f58080; }
+.hljs-comment { color: #a3acb8; font-style: italic; }
+.hljs-title, .hljs-function { color: #d0d5dc; }
 .hljs-number, .hljs-literal { color: #ffffff; }

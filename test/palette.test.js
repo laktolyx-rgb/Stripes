@@ -16,11 +16,11 @@ test('every variant passes its WCAG target', () => {
 
 test('Night keeps the brand base colors', () => {
   const night = resolveAll(loadPalette()).find((v) => v.id === 'night');
-  assert.equal(night.roles.background.hex, '#181c22');
-  assert.equal(night.roles.foreground.hex, '#ececec');
+  assert.equal(night.roles.background.hex, '#2b323c');
+  assert.equal(night.roles.foreground.hex, '#eef0f3');
   assert.equal(night.roles.keyword.hex, '#ffffff');
   assert.equal(night.roles.keyword.bold, true);
-  assert.equal(night.roles.function.hex, '#c2c7ce');
+  assert.equal(night.roles.function.hex, '#d0d5dc');
   assert.equal(night.roles.comment.italic, true);
 });
 

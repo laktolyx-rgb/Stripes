@@ -4,18 +4,18 @@
   "author": "Stripes contributors",
   "editorScheme": "/themes/stripes_night.xml",
   "colors": {
-    "midnight": "#181c22",
-    "crypt": "#1e232a",
-    "grave": "#29303a",
-    "tomb": "#353d49",
-    "ash": "#5f6875",
-    "fog": "#8c95a1",
-    "smoke": "#c2c7ce",
-    "bone": "#ececec",
+    "midnight": "#2b323c",
+    "crypt": "#323a45",
+    "grave": "#3d4652",
+    "tomb": "#4a5463",
+    "ash": "#6f7a89",
+    "fog": "#a3acb8",
+    "smoke": "#d0d5dc",
+    "bone": "#eef0f3",
     "ivory": "#ffffff",
-    "blood": "#e36666",
-    "ember": "#f07f7f",
-    "scar": "#4a1f24"
+    "blood": "#f58080",
+    "ember": "#ff9c9c",
+    "scar": "#5a2c33"
   },
   "ui": {
     "*": {
@@ -214,10 +214,10 @@
   },
   "icons": {
     "ColorPalette": {
-      "Actions.Red": "#e36666",
-      "Actions.Grey": "#c2c7ce",
-      "Objects.Red": "#e36666",
-      "Objects.Grey": "#c2c7ce"
+      "Actions.Red": "#f58080",
+      "Actions.Grey": "#d0d5dc",
+      "Objects.Red": "#f58080",
+      "Objects.Grey": "#d0d5dc"
     }
   }
 }

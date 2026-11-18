@@ -15,10 +15,10 @@ This document says how every Stripes port must use the palette. `palette.json` i
 
 | Variant | Use | Target |
 |---|---|---|
-| Night | The original, industrial blue-charcoal `#181c22` | AA |
+| Night | The original, light industrial slate `#2b323c` | AA |
 | Bone | Light, old parchment | AA |
 | Void | True black for OLED | AA |
-| Blood | High contrast / low vision, oxblood black `#0f0405` | AAA |
+| Blood | High contrast / low vision, deep oxblood `#2a0a0d` | AAA |
 
 ## Syntax mapping
 

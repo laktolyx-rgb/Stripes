@@ -1,46 +1,46 @@
-# Stripes Blood. High contrast on oxblood black. Every token passes WCAG AAA.
+# Stripes Blood. High contrast on deep oxblood. Every token passes WCAG AAA.
 
 [colors.primary]
-background = "#0f0405"
+background = "#2a0a0d"
 foreground = "#ffffff"
 dim_foreground = "#b3b3b3"
 bright_foreground = "#ffffff"
 
 [colors.cursor]
-text = "#0f0405"
+text = "#2a0a0d"
 cursor = "#ffffff"
 
 [colors.vi_mode_cursor]
-text = "#0f0405"
-cursor = "#ff6b6b"
+text = "#2a0a0d"
+cursor = "#ff8080"
 
 [colors.selection]
 text = "#ffffff"
-background = "#401215"
+background = "#5e1a22"
 
 [colors.search.matches]
 foreground = "#ffffff"
-background = "#5c1519"
+background = "#701d26"
 
 [colors.search.focused_match]
-foreground = "#0f0405"
-background = "#ff6b6b"
+foreground = "#2a0a0d"
+background = "#ff8080"
 
 [colors.hints.start]
-foreground = "#0f0405"
-background = "#ff6b6b"
+foreground = "#2a0a0d"
+background = "#ff8080"
 
 [colors.hints.end]
-foreground = "#0f0405"
+foreground = "#2a0a0d"
 background = "#e0e0e0"
 
 [colors.footer_bar]
 foreground = "#ffffff"
-background = "#170708"
+background = "#320c10"
 
 [colors.normal]
-black = "#240c0e"
-red = "#ff6b6b"
+black = "#46131a"
+red = "#ff8080"
 green = "#d0d0d0"
 yellow = "#e8e8e8"
 blue = "#b3b3b3"
@@ -50,7 +50,7 @@ white = "#ffffff"
 
 [colors.bright]
 black = "#8a8a8a"
-red = "#ff8a8a"
+red = "#ff9e9e"
 green = "#e0e0e0"
 yellow = "#f5f5f5"
 blue = "#cccccc"

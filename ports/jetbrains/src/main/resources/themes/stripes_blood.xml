@@ -6,31 +6,31 @@
   </metaInfo>
   <colors>
     <option name="CARET_COLOR" value="ffffff" />
-    <option name="CARET_ROW_COLOR" value="240c0e" />
-    <option name="CONSOLE_BACKGROUND_KEY" value="170708" />
-    <option name="GUTTER_BACKGROUND" value="0f0405" />
-    <option name="INDENT_GUIDE" value="240c0e" />
+    <option name="CARET_ROW_COLOR" value="46131a" />
+    <option name="CONSOLE_BACKGROUND_KEY" value="320c10" />
+    <option name="GUTTER_BACKGROUND" value="2a0a0d" />
+    <option name="INDENT_GUIDE" value="46131a" />
     <option name="SELECTED_INDENT_GUIDE" value="8a8a8a" />
     <option name="LINE_NUMBERS_COLOR" value="8a8a8a" />
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="ffffff" />
-    <option name="METHOD_SEPARATORS_COLOR" value="240c0e" />
-    <option name="RIGHT_MARGIN_COLOR" value="240c0e" />
-    <option name="SELECTION_BACKGROUND" value="401215" />
+    <option name="METHOD_SEPARATORS_COLOR" value="46131a" />
+    <option name="RIGHT_MARGIN_COLOR" value="46131a" />
+    <option name="SELECTION_BACKGROUND" value="5e1a22" />
     <option name="SELECTION_FOREGROUND" value="" />
-    <option name="TEARLINE_COLOR" value="240c0e" />
-    <option name="WHITESPACES" value="240c0e" />
+    <option name="TEARLINE_COLOR" value="46131a" />
+    <option name="WHITESPACES" value="46131a" />
     <option name="ADDED_LINES_COLOR" value="ffffff" />
     <option name="MODIFIED_LINES_COLOR" value="e0e0e0" />
-    <option name="DELETED_LINES_COLOR" value="ff8a8a" />
+    <option name="DELETED_LINES_COLOR" value="ff9e9e" />
     <option name="VCS_ANNOTATIONS_COLOR_1" value="8a8a8a" />
-    <option name="DOCUMENTATION_COLOR" value="170708" />
+    <option name="DOCUMENTATION_COLOR" value="320c10" />
     <option name="ScrollBar.Mac.thumbColor" value="5c5c5c66" />
   </colors>
   <attributes>
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="ffffff" />
-        <option name="BACKGROUND" value="0f0405" />
+        <option name="BACKGROUND" value="2a0a0d" />
       </value>
     </option>
     <option name="DEFAULT_KEYWORD">
@@ -41,19 +41,19 @@
     </option>
     <option name="DEFAULT_STRING">
       <value>
-        <option name="FOREGROUND" value="ff6b6b" />
+        <option name="FOREGROUND" value="ff8080" />
       </value>
     </option>
     <option name="DEFAULT_VALID_STRING_ESCAPE">
       <value>
-        <option name="FOREGROUND" value="ff8a8a" />
+        <option name="FOREGROUND" value="ff9e9e" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_INVALID_STRING_ESCAPE">
       <value>
-        <option name="FOREGROUND" value="ff8a8a" />
-        <option name="EFFECT_COLOR" value="ff8a8a" />
+        <option name="FOREGROUND" value="ff9e9e" />
+        <option name="EFFECT_COLOR" value="ff9e9e" />
         <option name="EFFECT_TYPE" value="2" />
       </value>
     </option>
@@ -237,7 +237,7 @@
     </option>
     <option name="DEFAULT_ENTITY">
       <value>
-        <option name="FOREGROUND" value="ff8a8a" />
+        <option name="FOREGROUND" value="ff9e9e" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -272,7 +272,7 @@
     </option>
     <option name="JS.REGEXP">
       <value>
-        <option name="FOREGROUND" value="ff8a8a" />
+        <option name="FOREGROUND" value="ff9e9e" />
       </value>
     </option>
     <option name="MARKDOWN_HEADER_LEVEL_1">
@@ -289,49 +289,49 @@
     </option>
     <option name="MARKDOWN_LINK_DESTINATION">
       <value>
-        <option name="FOREGROUND" value="ff6b6b" />
-        <option name="EFFECT_COLOR" value="ff6b6b" />
+        <option name="FOREGROUND" value="ff8080" />
+        <option name="EFFECT_COLOR" value="ff8080" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="5c1519" />
+        <option name="BACKGROUND" value="701d26" />
       </value>
     </option>
     <option name="WRITE_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="5c1519" />
+        <option name="BACKGROUND" value="701d26" />
       </value>
     </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="5c1519" />
+        <option name="BACKGROUND" value="701d26" />
       </value>
     </option>
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="401215" />
+        <option name="BACKGROUND" value="5e1a22" />
       </value>
     </option>
     <option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="401215" />
+        <option name="BACKGROUND" value="5e1a22" />
         <option name="EFFECT_COLOR" value="ffffff" />
         <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="ff6b6b" />
+        <option name="FOREGROUND" value="ff8080" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="ERRORS_ATTRIBUTES">
       <value>
-        <option name="EFFECT_COLOR" value="ff8a8a" />
+        <option name="EFFECT_COLOR" value="ff9e9e" />
         <option name="EFFECT_TYPE" value="2" />
-        <option name="ERROR_STRIPE_COLOR" value="ff8a8a" />
+        <option name="ERROR_STRIPE_COLOR" value="ff9e9e" />
       </value>
     </option>
     <option name="WARNING_ATTRIBUTES">
@@ -348,7 +348,7 @@
     </option>
     <option name="TODO_DEFAULT_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="ff6b6b" />
+        <option name="FOREGROUND" value="ff8080" />
         <option name="FONT_TYPE" value="3" />
       </value>
     </option>

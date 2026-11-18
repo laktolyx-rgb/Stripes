@@ -2,41 +2,41 @@
  * @name Stripes Blood
  * @author Stripes contributors
  * @version 0.1.0
- * @description High contrast on oxblood black. Every token passes WCAG AAA. Black and white, and one drop of blood.
+ * @description High contrast on deep oxblood. Every token passes WCAG AAA. Black and white, and one drop of blood.
  * @source https://github.com/laktolyx-rgb/Stripes
  * @website https://laktolyx-rgb.github.io/Stripes
  */
 
 :root, .theme-dark, .theme-light, .theme-darker, .theme-midnight, .visual-refresh {
   /* classic */
-  --background-primary: #0f0405;
-  --background-secondary: #170708;
-  --background-secondary-alt: #240c0e;
-  --background-tertiary: #170708;
-  --background-floating: #170708;
-  --background-nested-floating: #170708;
-  --background-accent: #401215;
-  --background-mobile-primary: #0f0405;
-  --background-mobile-secondary: #170708;
-  --background-modifier-hover: #40121580;
-  --background-modifier-active: #401215cc;
-  --background-modifier-selected: #401215;
-  --background-modifier-accent: #240c0e;
-  --background-message-hover: #240c0e99;
-  --background-mentioned: #ff6b6b1a;
-  --background-mentioned-hover: #ff6b6b26;
-  --channeltextarea-background: #170708;
-  --modal-background: #170708;
-  --modal-footer-background: #0f0405;
-  --input-background: #0f0405;
-  --deprecated-card-bg: #170708;
+  --background-primary: #2a0a0d;
+  --background-secondary: #320c10;
+  --background-secondary-alt: #46131a;
+  --background-tertiary: #320c10;
+  --background-floating: #320c10;
+  --background-nested-floating: #320c10;
+  --background-accent: #5e1a22;
+  --background-mobile-primary: #2a0a0d;
+  --background-mobile-secondary: #320c10;
+  --background-modifier-hover: #5e1a2280;
+  --background-modifier-active: #5e1a22cc;
+  --background-modifier-selected: #5e1a22;
+  --background-modifier-accent: #46131a;
+  --background-message-hover: #46131a99;
+  --background-mentioned: #ff80801a;
+  --background-mentioned-hover: #ff808026;
+  --channeltextarea-background: #320c10;
+  --modal-background: #320c10;
+  --modal-footer-background: #2a0a0d;
+  --input-background: #2a0a0d;
+  --deprecated-card-bg: #320c10;
   --text-normal: #ffffff;
   --text-muted: #b3b3b3;
-  --text-link: #ff6b6b;
+  --text-link: #ff8080;
   --text-positive: #ffffff;
   --text-warning: #ffffff;
-  --text-danger: #ff8a8a;
-  --text-brand: #ff6b6b;
+  --text-danger: #ff9e9e;
+  --text-brand: #ff8080;
   --header-primary: #ffffff;
   --header-secondary: #e0e0e0;
   --interactive-normal: #e0e0e0;
@@ -47,33 +47,33 @@
   --channel-icon: #b3b3b3;
   --scrollbar-thin-thumb: #8a8a8a;
   --scrollbar-auto-thumb: #8a8a8a;
-  --scrollbar-auto-track: #170708;
-  --brand-experiment: #ff6b6b;
-  --brand-500: #ff6b6b;
-  --brand-560: #ff8a8a;
-  --mention-foreground: #ff6b6b;
-  --mention-background: #ff6b6b26;
-  --info-danger-foreground: #ff8a8a;
-  --status-danger: #ff8a8a;
-  --button-danger-background: #ff6b6b;
-  --button-filled-brand-background: #ff6b6b;
-  --button-filled-brand-background-hover: #ff8a8a;
-  --button-filled-brand-text: #0f0405;
-  --button-secondary-background: #240c0e;
-  --control-brand-foreground: #ff6b6b;
-  --focus-primary: #ff6b6b;
-  --border-subtle: #240c0e;
-  --border-faint: #240c0e;
+  --scrollbar-auto-track: #320c10;
+  --brand-experiment: #ff8080;
+  --brand-500: #ff8080;
+  --brand-560: #ff9e9e;
+  --mention-foreground: #ff8080;
+  --mention-background: #ff808026;
+  --info-danger-foreground: #ff9e9e;
+  --status-danger: #ff9e9e;
+  --button-danger-background: #ff8080;
+  --button-filled-brand-background: #ff8080;
+  --button-filled-brand-background-hover: #ff9e9e;
+  --button-filled-brand-text: #2a0a0d;
+  --button-secondary-background: #46131a;
+  --control-brand-foreground: #ff8080;
+  --focus-primary: #ff8080;
+  --border-subtle: #46131a;
+  --border-faint: #46131a;
   --border-strong: #8a8a8a;
 
   /* 2025 visual refresh */
-  --background-base-lowest: #0f0405;
-  --background-base-lower: #170708;
-  --background-base-low: #170708;
-  --background-surface-high: #170708;
-  --background-surface-higher: #240c0e;
-  --background-surface-highest: #401215;
-  --chat-background-default: #0f0405;
+  --background-base-lowest: #2a0a0d;
+  --background-base-lower: #320c10;
+  --background-base-low: #320c10;
+  --background-surface-high: #320c10;
+  --background-surface-higher: #46131a;
+  --background-surface-highest: #5e1a22;
+  --chat-background-default: #2a0a0d;
   --text-default: #ffffff;
   --text-subtle: #e0e0e0;
   --text-strong: #ffffff;
@@ -82,10 +82,10 @@
 }
 
 /* Monochrome role colors would break meaning; we only tint the user's own mentions in blood. */
-::selection { background: #ff6b6b59; color: #ffffff; }
+::selection { background: #ff808059; color: #ffffff; }
 code, pre { font-family: 'JetBrains Mono', Consolas, monospace !important; }
 .hljs-keyword, .hljs-built_in { color: #ffffff; font-weight: 700; }
-.hljs-string { color: #ff6b6b; }
+.hljs-string { color: #ff8080; }
 .hljs-comment { color: #b3b3b3; font-style: italic; }
 .hljs-title, .hljs-function { color: #e0e0e0; }
 .hljs-number, .hljs-literal { color: #ffffff; }

@@ -2,25 +2,25 @@
   "schemes": [
     {
       "name": "Stripes Night",
-      "background": "#181c22",
-      "foreground": "#ececec",
+      "background": "#2b323c",
+      "foreground": "#eef0f3",
       "cursorColor": "#ffffff",
-      "selectionBackground": "#353d49",
-      "black": "#29303a",
-      "brightBlack": "#5f6875",
-      "red": "#e36666",
-      "brightRed": "#f07f7f",
-      "green": "#b0b0b0",
-      "brightGreen": "#c8c8c8",
-      "yellow": "#d4d4d4",
-      "brightYellow": "#e6e6e6",
-      "blue": "#8f8f8f",
-      "brightBlue": "#a8a8a8",
-      "purple": "#c27a7a",
-      "brightPurple": "#d69a9a",
-      "cyan": "#9e9e9e",
-      "brightCyan": "#b8b8b8",
-      "white": "#ececec",
+      "selectionBackground": "#4a5463",
+      "black": "#3d4652",
+      "brightBlack": "#6f7a89",
+      "red": "#f58080",
+      "brightRed": "#ff9c9c",
+      "green": "#c4c9cf",
+      "brightGreen": "#d6dade",
+      "yellow": "#dde0e4",
+      "brightYellow": "#eceef0",
+      "blue": "#a8b0bb",
+      "brightBlue": "#c0c6ce",
+      "purple": "#e09a9a",
+      "brightPurple": "#f0b4b4",
+      "cyan": "#b6bdc6",
+      "brightCyan": "#cdd2d8",
+      "white": "#eef0f3",
       "brightWhite": "#ffffff"
     },
     {
@@ -71,14 +71,14 @@
     },
     {
       "name": "Stripes Blood",
-      "background": "#0f0405",
+      "background": "#2a0a0d",
       "foreground": "#ffffff",
       "cursorColor": "#ffffff",
-      "selectionBackground": "#401215",
-      "black": "#240c0e",
+      "selectionBackground": "#5e1a22",
+      "black": "#46131a",
       "brightBlack": "#8a8a8a",
-      "red": "#ff6b6b",
-      "brightRed": "#ff8a8a",
+      "red": "#ff8080",
+      "brightRed": "#ff9e9e",
       "green": "#d0d0d0",
       "brightGreen": "#e0e0e0",
       "yellow": "#e8e8e8",
@@ -101,13 +101,13 @@
         "useMica": false
       },
       "tab": {
-        "background": "#181c22ff",
-        "unfocusedBackground": "#1e232aff",
+        "background": "#2b323cff",
+        "unfocusedBackground": "#323a45ff",
         "showCloseButton": "hover"
       },
       "tabRow": {
-        "background": "#1e232aff",
-        "unfocusedBackground": "#1e232aff"
+        "background": "#323a45ff",
+        "unfocusedBackground": "#323a45ff"
       }
     },
     {
@@ -149,13 +149,13 @@
         "useMica": false
       },
       "tab": {
-        "background": "#0f0405ff",
-        "unfocusedBackground": "#170708ff",
+        "background": "#2a0a0dff",
+        "unfocusedBackground": "#320c10ff",
         "showCloseButton": "hover"
       },
       "tabRow": {
-        "background": "#170708ff",
-        "unfocusedBackground": "#170708ff"
+        "background": "#320c10ff",
+        "unfocusedBackground": "#320c10ff"
       }
     }
   ]
