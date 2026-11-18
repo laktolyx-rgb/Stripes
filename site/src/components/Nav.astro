@@ -1,53 +1,48 @@
 ---
 import palette from '../generated/palette.json';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const variants = Object.values(palette.variants) as { id: string; name: string; colors: Record<string, { hex: string }> }[];
+const variants = Object.values(palette.variants) as { id: string; name: string }[];
 ---
 <nav class="nav">
-  <div class="wrap inner">
-    <a class="brand" href="#top"><img src={`${base}/brand/mark.svg`} alt="" width="28" height="28" /> Stripes</a>
-    <div class="links">
-      <a href="#palette">Palette</a>
-      <a href="#playground">Playground</a>
-      <a href="#ports">Ports</a>
-      <a href="https://github.com/stripes-theme/stripes">GitHub</a>
-    </div>
-    <div class="picker" role="radiogroup" aria-label="Variant">
-      {variants.map((v) => (
-        <button role="radio" aria-checked="false" data-variant={v.id} title={v.name}
-          style={`--sw-bg:${v.colors.midnight.hex};--sw-fg:${v.colors.bone.hex};--sw-acc:${v.colors.blood.hex}`}>
-          <span class="sw" aria-hidden="true"></span><span class="label">{v.id}</span>
-        </button>
-      ))}
-    </div>
+  <a class="brand" href="#top"><img src={`${base}/brand/mark.svg`} alt="" width="30" height="30" /><span>Stripes</span></a>
+  <div class="links">
+    <a href="#act-1">The picture</a><a href="#palette">Palette</a><a href="#playground">Playground</a><a href="#ports">Box office</a>
+    <a href="https://github.com/stripes-theme/stripes">GitHub</a>
+  </div>
+  <div class="picker" role="radiogroup" aria-label="Variant for the page">
+    {variants.map((v, i) => (
+      <button role="radio" aria-checked="false" data-variant={v.id} title={`${v.name} (key ${i + 1})`}>{v.id}</button>
+    ))}
   </div>
 </nav>
 
 <style>
   .nav {
-    position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px);
-    background: color-mix(in srgb, var(--stripes-crypt) 85%, transparent); border-bottom: 1px solid var(--stripes-grave);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 60; display: flex; align-items: center; gap: 28px;
+    padding: 14px clamp(16px, 4vw, 48px); pointer-events: none;
   }
-  .inner { display: flex; align-items: center; gap: 24px; height: 60px; }
-  .brand { display: flex; gap: 10px; align-items: center; font: 24px/1 var(--display); color: var(--stripes-ivory); text-decoration: none; }
+  .nav > * { pointer-events: auto; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--stripes-ivory); font: 700 28px/1 var(--gothic); }
   .links { display: flex; gap: 20px; margin-right: auto; }
-  .links a { color: var(--stripes-smoke); text-decoration: none; font: 14px var(--mono); }
-  .links a:hover { color: var(--stripes-accent); }
-  .picker { display: flex; gap: 4px; border: 1px solid var(--stripes-grave); padding: 3px; }
+  .links a { color: var(--stripes-smoke); text-decoration: none; font-size: 14px; padding: 2px 0; border-bottom: 1px dashed transparent; }
+  .links a:hover { color: var(--stripes-blood); border-bottom-color: var(--stripes-blood); }
+  .picker { display: flex; gap: 6px; }
   .picker button {
-    display: flex; gap: 6px; align-items: center; padding: 6px 10px; border: 0; cursor: pointer;
-    background: transparent; color: var(--stripes-fog); font: 12px/1 var(--mono); text-transform: capitalize;
+    font: 13px var(--type); text-transform: capitalize; cursor: pointer; padding: 7px 12px; border: 0;
+    background: var(--stripes-crypt); color: var(--stripes-fog); outline: 1px solid var(--stripes-ash);
+    clip-path: polygon(0 10%, 6% 0, 94% 6%, 100% 18%, 97% 92%, 92% 100%, 6% 95%, 0 85%);
+    transition: transform .12s steps(2);
   }
-  .picker button[aria-checked='true'] { background: var(--stripes-tomb); color: var(--stripes-ivory); }
-  .sw {
-    width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--stripes-ash);
-    background: linear-gradient(90deg, var(--sw-bg) 0 40%, var(--sw-fg) 40% 70%, var(--sw-acc) 70%);
-  }
-  @media (max-width: 760px) { .links { display: none; } .brand { margin-right: auto; } .label { display: none; } }
+  .picker button:nth-child(odd) { transform: rotate(-2deg); } .picker button:nth-child(even) { transform: rotate(1.5deg); }
+  .picker button[aria-checked='true'] { background: var(--stripes-bone); color: var(--stripes-midnight); }
+  .picker button:hover { transform: translateY(-2px); }
+  .nav.solid { background: color-mix(in srgb, var(--stripes-midnight) 92%, transparent); border-bottom: 2px dashed var(--stripes-grave); }
+  @media (max-width: 900px) { .links { display: none; } .brand { margin-right: auto; } .brand span { display: none; } .picker button { padding: 6px 8px; font-size: 12px; } }
 </style>
 
 <script>
   const root = document.documentElement;
+  const nav = document.querySelector('.nav')!;
   const buttons = [...document.querySelectorAll<HTMLButtonElement>('.picker button')];
   function setVariant(id: string, save = true) {
     root.dataset.stripes = id;
@@ -57,10 +52,12 @@ const variants = Object.values(palette.variants) as { id: string; name: string; 
   }
   buttons.forEach((b) => b.addEventListener('click', () => setVariant(b.dataset.variant!)));
   setVariant(root.dataset.stripes || 'night', false);
-  // keyboard: 1-4
   addEventListener('keydown', (e) => {
     if ((e.target as HTMLElement).closest('textarea, input, select')) return;
-    const i = Number(e.key) - 1;
-    if (buttons[i]) setVariant(buttons[i].dataset.variant!);
+    const b = buttons[Number(e.key) - 1];
+    if (b) setVariant(b.dataset.variant!);
   });
+  const onScroll = () => nav.classList.toggle('solid', scrollY > innerHeight * 0.6);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 </script>

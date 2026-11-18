@@ -3,54 +3,65 @@ import palette from '../generated/palette.json';
 const order = palette.colorOrder as string[];
 const night = (palette.variants as any).night;
 ---
-<section id="palette">
+<section id="palette" class="specimens">
   <div class="wrap">
-    <p class="eyebrow">The palette</p>
-    <h2>Twelve shades of the grave</h2>
-    <p class="lede">Every port reads from a single <code>palette.json</code>. Each text color passes WCAG AA on Night, Bone and Void, and AAA on Blood. Click a color to copy it.</p>
-    <div class="grid">
-      {order.map((name) => (
-        <button class="chip" data-color={name} style={`--c: var(--stripes-${name})`}>
-          <span class="swatch"></span>
-          <span class="meta"><b>{name}</b><code class="hex">{night.colors[name].hex}</code><small>{night.colors[name].doc}</small></span>
-        </button>
+    <p class="kicker">From the collection</p>
+    <h2 class="gothic">Twelve specimens</h2>
+    <p class="lede">Every port is mixed from these twelve inks in a single <code>palette.json</code>. Each specimen follows the variant you pick above. Click a tag to copy it.</p>
+    <ul class="tags">
+      {order.map((name, i) => (
+        <li style={`--r:${((i * 37) % 9) - 4}deg;--d:${(i % 4) * -0.7}s`}>
+          <button class="tag" data-color={name} title={night.colors[name].doc}>
+            <span class="hole" aria-hidden="true"></span>
+            <svg class="blob" viewBox="0 0 60 60" aria-hidden="true">
+              <path filter="url(#ink)" d="M30 6 C46 6 54 16 54 30 C54 46 44 54 30 54 C14 54 6 44 6 30 C6 15 15 6 30 6 Z"
+                fill={`var(--stripes-${name})`} stroke="var(--stripes-bone)" stroke-width="2.5" />
+            </svg>
+            <b>{name}</b>
+            <code class="hex">{night.colors[name].hex}</code>
+          </button>
+        </li>
       ))}
-    </div>
-    <p class="note" aria-live="polite"></p>
-    <pre class="install"><code>npm i @stripes-theme/palette</code></pre>
+    </ul>
+    <p class="copied" aria-live="polite"></p>
+    <pre class="paper install"><code>npm i @stripes-theme/palette</code></pre>
   </div>
 </section>
 
 <script define:vars={{ variants: palette.variants }}>
+  const root = document.documentElement;
   const update = () => {
-    const v = variants[document.documentElement.dataset.stripes || 'night'];
-    document.querySelectorAll('#palette .chip').forEach((el) => {
-      el.querySelector('.hex').textContent = v.colors[el.dataset.color].hex;
-    });
+    const v = variants[root.dataset.stripes || 'night'];
+    document.querySelectorAll('.specimens .tag').forEach((el) => { el.querySelector('.hex').textContent = v.colors[el.dataset.color].hex; });
   };
   addEventListener('stripes:variant', update);
   update();
-  document.querySelectorAll('#palette .chip').forEach((el) => el.addEventListener('click', async () => {
+  document.querySelectorAll('.specimens .tag').forEach((el) => el.addEventListener('click', async () => {
     const hex = el.querySelector('.hex').textContent;
-    const note = document.querySelector('#palette .note');
-    try { await navigator.clipboard.writeText(hex); note.textContent = `Copied ${el.dataset.color} ${hex}`; }
-    catch { note.textContent = `${el.dataset.color}: ${hex}`; }
+    const out = document.querySelector('.specimens .copied');
+    try { await navigator.clipboard.writeText(hex); out.textContent = `${el.dataset.color} ${hex}, copied`; }
+    catch { out.textContent = `${el.dataset.color}: ${hex}`; }
   }));
 </script>
 
 <style>
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
-  .chip {
-    display: flex; gap: 14px; align-items: center; padding: 12px; text-align: left; cursor: pointer;
-    background: var(--stripes-crypt); border: 1px solid var(--stripes-grave); color: var(--stripes-foreground);
-    font: inherit; transition: border-color .2s, transform .15s;
+  .specimens { padding: 120px 0; border-top: 2px dashed var(--stripes-grave); }
+  .tags { list-style: none; padding: 0; margin: 56px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 40px 22px; }
+  li { position: relative; display: grid; justify-items: center; }
+  li::before { content: ''; position: absolute; top: -34px; left: 50%; width: 2px; height: 40px; background: var(--stripes-ash); }
+  .tag {
+    position: relative; display: grid; justify-items: center; gap: 6px; width: 100%; padding: 26px 12px 16px; cursor: pointer;
+    font: inherit; color: var(--stripes-midnight); background: var(--stripes-bone); border: 0;
+    clip-path: polygon(50% 0, 100% 14%, 100% 100%, 0 100%, 0 14%);
+    transform: rotate(var(--r)); transform-origin: 50% -30px; animation: sway 4s steps(8) infinite alternate; animation-delay: var(--d);
   }
-  .chip:hover { border-color: var(--stripes-accent); transform: translateY(-2px); }
-  .swatch { flex: none; width: 56px; height: 56px; background: var(--c); border: 1px solid var(--stripes-ash); }
-  .meta { display: grid; gap: 2px; min-width: 0; }
-  .meta b { font: 700 15px var(--mono); color: var(--stripes-ivory); }
-  .meta code { font-size: 13px; color: var(--stripes-smoke); }
-  .meta small { font-size: 13px; color: var(--stripes-fog); line-height: 1.3; }
-  .note { font: 13px var(--mono); color: var(--stripes-accent); min-height: 1.5em; }
-  .install { display: inline-block; padding: 12px 18px; background: var(--stripes-crypt); border-left: 3px solid var(--stripes-accent); color: var(--stripes-ivory); margin: 8px 0 0; }
+  .tag:hover { animation-play-state: paused; }
+  @keyframes sway { from { transform: rotate(var(--r)) } to { transform: rotate(calc(var(--r) * -1)) } }
+  .hole { width: 10px; height: 10px; border-radius: 50%; background: var(--stripes-midnight); position: absolute; top: 12px; }
+  .blob { width: 60px; height: 60px; }
+  .blob path { stroke: var(--stripes-midnight); }
+  b { font: 700 24px/1 var(--gothic); }
+  .hex { font-size: 13px; color: var(--stripes-midnight); opacity: .75; }
+  .copied { min-height: 1.6em; color: var(--stripes-blood); margin: 28px 0 8px; }
+  .install { display: inline-block; padding: 14px 20px; margin: 0; color: var(--stripes-ivory); }
 </style>

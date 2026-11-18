@@ -1,45 +1,78 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
+import Scene from '../components/Scene.astro';
+import Act from '../components/Act.astro';
 import Palette from '../components/Palette.astro';
 import Playground from '../components/Playground.astro';
 import Ports from '../components/Ports.astro';
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+import TheEnd from '../components/TheEnd.astro';
+
+const acts = [
+  {
+    variant: 'night', caption: 'In which the code goes dark, and only the strings bleed.', file: 'wake.ts', lang: 'typescript',
+    note: 'The original. Charcoal, bone and blood. Keywords in bold ivory, comments in a fog of italics.',
+    code: `// Act I: in which the code goes dark
+import { candle } from './crypt';
+
+interface Ghost { name: string; haunts: number }
+
+export function wake(ghosts: Ghost[], hour = 13) {
+  if (hour !== 13) throw new Error(\`too early, \${hour}\`);
+  return ghosts.filter((g) => g.haunts > 0).map(candle);
+}`,
+  },
+  {
+    variant: 'bone', caption: 'In which the ink dries on old parchment.', file: 'ledger.py', lang: 'python',
+    note: 'For daylight and printed pages. Dried-ink black on warm parchment, the blood darkened to stay legible.',
+    code: `# Act II: the undertaker's ledger
+from dataclasses import dataclass
+
+@dataclass
+class Grave:
+    name: str
+    depth: float = 6.0  # feet, by tradition
+
+def unmarked(graves: list[Grave]) -> list[str]:
+    """Names nobody wrote on a stone."""
+    return [g.name for g in graves if not g.name.strip()]`,
+  },
+  {
+    variant: 'void', caption: 'In which the pixels sleep in their coffins.', file: 'coffin.rs', lang: 'rust',
+    note: 'True #000 for OLED screens. Every unlit pixel is switched off and resting in peace.',
+    code: `// Act III: nothing but the void
+#[derive(Debug)]
+struct Coffin<'a> { owner: &'a str, nails: u8 }
+
+impl Coffin<'_> {
+    fn is_sealed(&self) -> bool {
+        self.nails >= 13 // the traditional number
+    }
+}`,
+  },
+  {
+    variant: 'blood', caption: 'In which every word can be read, even by the dead.', file: 'seance.go', lang: 'go',
+    note: 'High contrast. Every token passes WCAG AAA, for tired eyes and low vision.',
+    code: `// Act IV: a séance with perfect contrast
+package seance
+
+import "fmt"
+
+func Summon(name string, candles int) error {
+	if candles < 3 {
+		return fmt.Errorf("%s will not come with %d candles", name, candles)
+	}
+	return nil
+}`,
+  },
+] as const;
 ---
 <Layout>
   <Nav />
-  <Hero />
-  <div class="stripe-rule" aria-hidden="true"></div>
-
-  <section id="acts">
-    <div class="wrap acts">
-      <div><p class="eyebrow">Act I</p><h3>Night</h3><p>The original. Charcoal <code>#101010</code>, bone text, one red thread.</p></div>
-      <div><p class="eyebrow">Act II</p><h3>Bone</h3><p>Old parchment and dried ink, for daylight and printed pages.</p></div>
-      <div><p class="eyebrow">Act III</p><h3>Void</h3><p>True <code>#000</code> black. Your OLED pixels sleep in their coffins.</p></div>
-      <div><p class="eyebrow">Act IV</p><h3>Blood</h3><p>High contrast. Every token passes WCAG AAA.</p></div>
-    </div>
-  </section>
-
+  <Scene />
+  {acts.map((a, i) => <Act n={i + 1} flip={i % 2 === 1} {...a} />)}
   <Palette />
   <Playground />
   <Ports />
-
-  <footer>
-    <div class="wrap foot">
-      <img src={`${base}/brand/mark.svg`} alt="" width="40" height="40" />
-      <p>Stripes is MIT licensed and made by people who like their themes the way they like their films: in black and white, with a little blood.<br />
-        <a href="https://github.com/stripes-theme/stripes">GitHub</a> · <a href="https://www.npmjs.com/package/@stripes-theme/palette">npm</a> · Press <kbd>1</kbd>–<kbd>4</kbd> to switch variants.</p>
-    </div>
-  </footer>
+  <TheEnd />
 </Layout>
-
-<style>
-  .acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
-  .acts h3 { font: 400 34px/1 var(--display); margin: 0 0 8px; color: var(--stripes-ivory); }
-  .acts p:not(.eyebrow) { color: var(--stripes-smoke); margin: 0; }
-  footer { border-top: 1px solid var(--stripes-grave); padding: 48px 0 64px; background: var(--stripes-crypt); }
-  .foot { display: flex; gap: 20px; align-items: flex-start; color: var(--stripes-fog); font-size: 16px; }
-  .foot p { margin: 0; }
-  kbd { font-size: 12px; border: 1px solid var(--stripes-ash); padding: 1px 5px; color: var(--stripes-foreground); }
-</style>

@@ -96,6 +96,7 @@
         "lua/lualine/themes/stripes.lua",
         "lua/stripes/groups.lua",
         "lua/stripes/init.lua",
+        "lua/stripes/mortimer.lua",
         "lua/stripes/palette.lua"
       ]
     },

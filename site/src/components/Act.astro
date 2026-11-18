@@ -1,0 +1,88 @@
+---
+import { highlight } from '../lib/highlight';
+import { worstContrast } from '../lib/contrast';
+import palette from '../generated/palette.json';
+import mascot from '../../../assets/brand/mascot.svg?raw';
+
+interface Props {
+  n: number; variant: 'night' | 'bone' | 'void' | 'blood';
+  caption: string; file: string; lang: 'typescript' | 'python' | 'rust' | 'go' | 'lua'; code: string;
+  note: string; flip?: boolean;
+}
+const { n, variant, caption, file, lang, code, note, flip = false } = Astro.props;
+const v = (palette.variants as any)[variant];
+const html = await highlight(code, lang, variant);
+const c = worstContrast(variant);
+const roman = ['I', 'II', 'III', 'IV'][n - 1];
+---
+<section class:list={['act', { flip }]} id={`act-${n}`} data-stripes={variant}>
+  <div class="intertitle">
+    <svg class="ornament" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
+      <g filter="url(#ink)" fill="none" stroke="var(--stripes-bone)" stroke-width="3">
+        <rect x="12" y="12" width="776" height="276" />
+        <rect x="24" y="24" width="752" height="252" stroke-width="1.5" />
+        <path d="M24 60 Q60 60 60 24 M776 60 Q740 60 740 24 M24 240 Q60 240 60 276 M776 240 Q740 240 740 276" />
+        <path d="M330 262 L470 262" stroke="var(--stripes-blood)" stroke-width="3" />
+      </g>
+    </svg>
+    <p class="kicker">Act {roman}</p>
+    <h2 class="gothic">{v.name.replace('Stripes ', '')}</h2>
+    <p class="caption">{caption}</p>
+  </div>
+
+  <div class="stage wrap">
+    <figure class="paper sheet">
+      <figcaption class="bar"><span class="pin"></span>{file}<span class="who">{v.name}</span></figcaption>
+      <div class="code" set:html={html}></div>
+      <div class="peek" set:html={mascot} aria-hidden="true"></div>
+    </figure>
+    <aside class="card">
+      <p class="note">{note}</p>
+      <dl>
+        <div><dt>background</dt><dd><i style={`background:${v.colors.midnight.hex}`}></i>{v.colors.midnight.hex}</dd></div>
+        <div><dt>the drop</dt><dd><i style={`background:${v.colors.blood.hex}`}></i>{v.colors.blood.hex}</dd></div>
+        <div><dt>worst contrast</dt><dd>{c.ratio}:1 <b>{c.level}</b></dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .act { padding: 120px 0 140px; display: grid; justify-items: center; gap: 72px; overflow: hidden; }
+  .intertitle { position: relative; width: min(800px, 100% - 32px); aspect-ratio: 8 / 3; display: grid; place-content: center; text-align: center; }
+  .ornament { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .caption { margin: 8px 0 0; padding: 0 28px; font-size: clamp(15px, 2vw, 18px); }
+
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 56px; align-items: center; }
+  .flip .stage { grid-template-columns: 260px minmax(0, 1fr); }
+  .flip .sheet { order: 2; transform: rotate(1.1deg); }
+  .sheet { margin: 0; transform: rotate(-1.2deg); }
+  .bar { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: var(--stripes-crypt); border-bottom: 2px dashed var(--stripes-ash); font-size: 15px; }
+  .pin { width: 12px; height: 12px; border-radius: 50%; background: var(--stripes-blood); box-shadow: 0 0 0 3px var(--stripes-midnight), 0 0 0 5px var(--stripes-bone); }
+  .who { margin-left: auto; color: var(--stripes-fog); font-size: 13px; }
+  .code :global(pre) { margin: 0; padding: 22px 26px; font: 15px/1.65 var(--mono); overflow: auto; background: var(--stripes-midnight) !important; }
+  .peek {
+    position: absolute; width: 120px; right: 26px; top: -96px; clip-path: inset(0 0 22% 0);
+    animation: peek 6s steps(1) infinite;
+  }
+  .flip .peek { right: auto; left: 26px; }
+  .peek :global(svg) { display: block; width: 100%; height: auto; }
+  @keyframes peek { 0%, 100% { transform: translateY(0) } 40% { transform: translateY(0) } 42% { transform: translateY(14px) } 46% { transform: translateY(40px) } 70% { transform: translateY(40px) } 72% { transform: translateY(14px) } 74% { transform: translateY(0) } }
+
+  .card { position: relative; padding: 22px; border: 2px solid var(--stripes-ash); transform: rotate(2deg); background: var(--stripes-crypt); }
+  .flip .card { transform: rotate(-2deg); }
+  .card::after { content: ''; position: absolute; top: -10px; left: 50%; width: 70px; height: 20px; transform: translateX(-50%) rotate(-3deg); background: color-mix(in srgb, var(--stripes-bone) 30%, transparent); }
+  .note { margin: 0 0 16px; font-size: 16px; }
+  dl { margin: 0; display: grid; gap: 10px; }
+  dl div { display: grid; gap: 2px; }
+  dt { font-size: 11px; letter-spacing: .25em; text-transform: uppercase; color: var(--stripes-fog); }
+  dd { margin: 0; display: flex; align-items: center; gap: 8px; font: 15px var(--mono); color: var(--stripes-ivory); }
+  dd i { width: 16px; height: 16px; border: 1px solid var(--stripes-ash); display: inline-block; }
+  dd b { color: var(--stripes-blood); font-weight: 700; }
+
+  @media (max-width: 900px) {
+    .stage, .flip .stage { grid-template-columns: minmax(0, 1fr); }
+    .flip .sheet { order: 0; }
+    .card { justify-self: center; width: min(320px, 100%); }
+  }
+</style>

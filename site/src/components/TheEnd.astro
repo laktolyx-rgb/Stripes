@@ -1,0 +1,28 @@
+---
+import mascot from '../../../assets/brand/mascot.svg?raw';
+---
+<footer class="the-end">
+  <div class="iris">
+    <h2 class="gothic">The End</h2>
+    <div class="cat" set:html={mascot} aria-hidden="true"></div>
+    <p class="credits">
+      Directed by the community · Colors by <code>palette.json</code> · Mortimer as himself<br />
+      MIT licensed · <a href="https://github.com/stripes-theme/stripes">GitHub</a> · <a href="https://www.npmjs.com/package/@stripes-theme/palette">npm</a> · press <kbd>1</kbd>–<kbd>4</kbd> to change the reel
+    </p>
+    <p class="fine">No cats were harmed. One was re-inked about 12 times a second.</p>
+  </div>
+</footer>
+
+<style>
+  .the-end {
+    padding: 140px 16px 120px; display: grid; place-items: center; text-align: center;
+    background: radial-gradient(circle at 50% 42%, var(--stripes-crypt) 0 34%, var(--stripes-midnight) 35%);
+    border-top: 2px dashed var(--stripes-grave);
+  }
+  h2 { font-size: clamp(72px, 12vw, 140px); line-height: 1; margin: 0; }
+  .cat { width: 150px; margin: 10px auto 26px; }
+  .cat :global(svg) { width: 100%; height: auto; display: block; }
+  .credits { color: var(--stripes-smoke); font-size: 15px; line-height: 1.9; margin: 0; }
+  .fine { color: var(--stripes-fog); font-size: 13px; margin-top: 18px; }
+  kbd { font-size: 12px; border: 1px solid var(--stripes-ash); padding: 1px 5px; color: var(--stripes-bone); }
+</style>

@@ -1,0 +1,40 @@
+---
+import scene from '../../../assets/brand/scene.svg?raw';
+---
+<header class="hero" id="top">
+  <div class="scene-wrap" set:html={scene}></div>
+  <div class="title">
+    <p class="kicker">a theme in four acts</p>
+    <h1 class="gothic">Stripes</h1>
+    <p class="tag">Black &amp; white, and one drop of <span>blood</span>.</p>
+    <div class="tags">
+      <a class="ticket" href="#act-1">Watch the picture</a>
+      <a class="ticket blood" href="#ports">Get the theme</a>
+    </div>
+    <p class="apps">VS Code · Neovim · Zed · JetBrains · Ghostty · Kitty · Alacritty · Windows Terminal · Obsidian · Discord</p>
+  </div>
+</header>
+
+<style>
+  .hero { position: relative; height: 100svh; min-height: 640px; overflow: hidden; background: var(--stripes-midnight); }
+  .scene-wrap, .scene-wrap :global(svg) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .title { position: absolute; left: clamp(16px, 6vw, 96px); top: clamp(96px, 15vh, 150px); max-width: 600px; }
+  h1 { font-size: clamp(96px, 16vw, 220px); line-height: .85; margin: 0; text-shadow: 4px 4px 0 var(--stripes-midnight); }
+  .tag { font-size: clamp(18px, 2.2vw, 24px); margin: 30px 0 26px; }
+  .tag span { color: var(--stripes-blood); }
+  .tags { display: flex; gap: 18px; flex-wrap: wrap; }
+  .apps { font-size: 12px; color: var(--stripes-fog); margin-top: 26px; max-width: 440px; }
+  @media (max-width: 760px) {
+    .title { top: 72px; right: 16px; }
+    .apps { display: none; }
+    .scene-wrap { top: auto; height: 62%; }
+  }
+</style>
+
+<script>
+  // Narrow screens: frame the moon, Mortimer and the tree.
+  const svg = document.querySelector('.scene-wrap svg');
+  const frame = () => svg?.setAttribute('viewBox', innerWidth < 760 ? '960 60 640 840' : '0 0 1600 900');
+  frame();
+  addEventListener('resize', frame);
+</script>

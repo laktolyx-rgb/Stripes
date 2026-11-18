@@ -4,8 +4,8 @@ import '../styles/global.css';
 
 interface Props { title?: string; description?: string }
 const {
-  title = 'Stripes: black & white, and one drop of blood',
-  description = 'A gothic theme for VS Code, Neovim, Zed, JetBrains, terminals and more. Four variants, WCAG-checked, generated from one palette.',
+  title = 'Stripes: a theme in four acts',
+  description = 'A hand-drawn, stop-motion gothic theme for VS Code, Neovim, Zed, JetBrains, terminals and more. Black & white, and one drop of blood.',
 } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const og = new URL(`${base}/social-preview.png`, Astro.site).href;
@@ -26,9 +26,8 @@ const og = new URL(`${base}/social-preview.png`, Astro.site).href;
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@400;700&family=Special+Elite&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
     <script is:inline>
-      // Restore the last variant before first paint (per-viewer convenience only).
       try {
         const v = localStorage.getItem('stripes-variant');
         if (v) document.documentElement.dataset.stripes = v;
@@ -36,6 +35,32 @@ const og = new URL(`${base}/social-preview.png`, Astro.site).href;
     </script>
   </head>
   <body>
+    <!-- Page-wide ink filters (the hero scene carries its own copies for standalone use) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence class="boil-seed" type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="3" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="ink-strong" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence class="boil-seed" type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="5" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
     <slot />
+    <div class="grain" aria-hidden="true"></div>
+    <script>
+      // Line boil: re-seed every ink filter on twos (≈12 fps), like re-inked stop-motion frames.
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const seeds = [...document.querySelectorAll('feTurbulence')];
+        let frame = 0;
+        setInterval(() => {
+          if (document.hidden) return;
+          frame = (frame + 1) % 4;
+          seeds.forEach((n, i) => n.setAttribute('seed', String(frame + 1 + i * 7)));
+        }, 1000 / 12);
+      }
+    </script>
   </body>
 </html>

@@ -1,11 +1,11 @@
 ---
 const langs = ['typescript', 'tsx', 'javascript', 'python', 'rust', 'go', 'lua', 'css', 'html', 'json', 'bash', 'markdown'];
 ---
-<section id="playground">
+<section id="playground" class="screening">
   <div class="wrap">
-    <p class="eyebrow">Playground</p>
-    <h2>Paste your code, see it in black and white</h2>
-    <p class="lede">Highlighted with the generated VS Code theme, so what you see here is what you get in the editor. Edit freely.</p>
+    <p class="kicker">The screening room</p>
+    <h2 class="gothic">Bring your own reel</h2>
+    <p class="lede">Paste your code. It is highlighted with the generated VS Code theme, so what you see here is what you get in your editor.</p>
 
     <div class="bar">
       <label>Language
@@ -15,7 +15,7 @@ const langs = ['typescript', 'tsx', 'javascript', 'python', 'rust', 'go', 'lua',
       <span class="status" id="pg-status">loading highlighter…</span>
     </div>
 
-    <div class="editor" id="pg-editor">
+    <div class="editor paper" id="pg-editor">
       <div class="out" id="pg-out" aria-hidden="true"></div>
       <textarea id="pg-src" spellcheck="false" aria-label="Code to preview" autocapitalize="off" autocomplete="off"></textarea>
     </div>
@@ -111,25 +111,25 @@ fn count(skels: &[Skeleton]) -> u32 {
 </script>
 
 <style>
-  .bar { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; font: 14px var(--mono); color: var(--stripes-smoke); }
-  .bar select { margin-left: 8px; font: inherit; background: var(--stripes-crypt); color: var(--stripes-foreground); border: 1px solid var(--stripes-grave); padding: 6px 8px; }
+  .screening { padding: 120px 0; border-top: 2px dashed var(--stripes-grave); }
+  .bar { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; margin: 40px 0 18px; font-size: 15px; color: var(--stripes-smoke); }
+  .bar select { margin-left: 8px; font: inherit; background: var(--stripes-bone); color: var(--stripes-midnight); border: 0; padding: 6px 10px; transform: rotate(-1deg); }
   .toggle { display: flex; gap: 8px; align-items: center; cursor: pointer; }
-  .toggle input { accent-color: var(--stripes-accent); }
+  .toggle input { accent-color: var(--stripes-blood); width: 16px; height: 16px; }
   .status { color: var(--stripes-fog); font-style: italic; }
-  .editor { position: relative; height: 380px; border: 1px solid var(--stripes-grave); background: var(--stripes-background); }
+  .editor { position: relative; height: 380px; transform: rotate(-.6deg); }
   .out, textarea {
-    position: absolute; inset: 0; margin: 0; padding: 18px 20px; overflow: auto;
+    position: absolute; inset: 0; margin: 0; padding: 20px 22px; overflow: auto;
     font: 15px/1.6 var(--mono); tab-size: 2; white-space: pre; letter-spacing: 0;
   }
   .out :global(pre) { margin: 0; padding: 0; background: transparent !important; font: inherit; }
   .out :global(code) { font: inherit; }
-  textarea {
-    resize: none; border: 0; outline: none; background: transparent; color: transparent;
-    caret-color: var(--stripes-cursor); -webkit-text-fill-color: transparent;
-  }
+  textarea { resize: none; border: 0; outline: none; background: transparent; color: transparent; caret-color: var(--stripes-cursor); -webkit-text-fill-color: transparent; }
   textarea::selection { background: color-mix(in srgb, var(--stripes-accent) 30%, transparent); }
-  .compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: 12px; margin-top: 12px; }
-  .compare :global(figure) { margin: 0; border: 1px solid var(--stripes-grave); }
-  .compare :global(figcaption) { font: italic 14px var(--serif); padding: 8px 14px; color: var(--stripes-smoke); background: var(--stripes-crypt); }
+  .compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: 30px; margin-top: 40px; }
+  .compare :global(figure) { position: relative; margin: 0; border: 2px solid var(--stripes-ash); }
+  .compare :global(figure:nth-child(odd)) { transform: rotate(-.8deg); }
+  .compare :global(figure:nth-child(even)) { transform: rotate(.8deg); }
+  .compare :global(figcaption) { font: 700 22px var(--gothic); padding: 8px 14px; color: var(--stripes-ivory); background: var(--stripes-crypt); border-bottom: 2px dashed var(--stripes-ash); }
   .compare :global(pre) { margin: 0; padding: 14px; font: 13px/1.55 var(--mono); overflow: auto; }
 </style>

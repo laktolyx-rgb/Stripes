@@ -1,7 +1,7 @@
-/* Site styles. Colors come only from @stripes-theme/palette CSS variables. */
+/* Stripes site: a stop-motion picture in four acts. Colors come only from @stripes-theme/palette. */
 :root {
-  --serif: 'IM Fell English', 'Iowan Old Style', Georgia, serif;
-  --display: 'IM Fell English SC', 'IM Fell English', Georgia, serif;
+  --gothic: 'Grenze Gotisch', 'UnifrakturCook', Georgia, serif;
+  --type: 'Special Elite', 'Courier New', monospace;
   --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
   --wrap: min(1120px, 100% - 32px);
 }
@@ -12,36 +12,50 @@ body {
   margin: 0;
   background: var(--stripes-background);
   color: var(--stripes-foreground);
-  font: 18px/1.6 var(--serif);
+  font: 18px/1.6 var(--type);
   -webkit-font-smoothing: antialiased;
-  transition: background-color .4s, color .4s;
 }
 a { color: var(--stripes-accent); text-underline-offset: 3px; }
 a:hover { color: var(--stripes-ember); }
 ::selection { background: var(--stripes-tomb); color: var(--stripes-ivory); }
-:focus-visible { outline: 2px solid var(--stripes-accent); outline-offset: 3px; }
+:focus-visible { outline: 2px dashed var(--stripes-accent); outline-offset: 4px; }
 code, pre, kbd { font-family: var(--mono); }
 img, svg { max-width: 100%; }
-
 .wrap { width: var(--wrap); margin-inline: auto; }
-section { padding: 96px 0; border-top: 1px solid var(--stripes-grave); }
-.eyebrow { font: 13px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--stripes-accent); margin: 0 0 12px; }
-h2 { font: 400 clamp(32px, 5vw, 52px)/1.1 var(--display); margin: 0 0 16px; color: var(--stripes-ivory); }
-.lede { color: var(--stripes-smoke); max-width: 60ch; margin: 0 0 40px; font-size: 20px; }
 
-.btn {
-  display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px;
-  font: 700 15px/1 var(--mono); letter-spacing: .04em; text-decoration: none;
-  border: 2px solid var(--stripes-ivory); color: var(--stripes-ivory); background: transparent;
-  cursor: pointer; transition: transform .15s, background .2s, color .2s;
+/* sections inherit their own variant via data-stripes, so set colors on them too */
+[data-stripes] { background: var(--stripes-midnight); color: var(--stripes-bone); }
+
+/* hand-inked display type */
+.gothic { font-family: var(--gothic); font-weight: 700; color: var(--stripes-ivory); filter: url(#ink); }
+h2.gothic { font-size: clamp(52px, 8vw, 92px); line-height: 1; margin: 0; }
+.kicker { letter-spacing: .35em; text-transform: uppercase; font-size: 13px; color: var(--stripes-fog); margin: 0 0 6px; }
+.lede { max-width: 60ch; color: var(--stripes-smoke); margin: 14px 0 0; }
+
+/* paper ticket buttons */
+.ticket {
+  position: relative; display: inline-block; padding: 14px 26px; font: 18px var(--type); text-decoration: none; border: 0; cursor: pointer;
+  color: var(--stripes-midnight); background: var(--stripes-bone); transform: rotate(-2deg);
+  clip-path: polygon(0 8%, 4% 0, 96% 3%, 100% 12%, 98% 90%, 94% 100%, 5% 97%, 0 88%);
+  transition: transform .15s steps(2);
 }
-.btn:hover { transform: translateY(-2px); background: var(--stripes-ivory); color: var(--stripes-background); }
-.btn.primary { background: var(--stripes-accent); border-color: var(--stripes-accent); color: var(--stripes-background); }
-.btn.primary:hover { background: var(--stripes-ember); border-color: var(--stripes-ember); }
+.ticket:hover { transform: rotate(1deg) translateY(-3px); color: var(--stripes-midnight); }
+.ticket.blood { background: var(--stripes-blood); transform: rotate(1.5deg); }
 
-/* barber stripe divider */
-.stripe-rule { height: 6px; background: repeating-linear-gradient(90deg, var(--stripes-foreground) 0 10px, transparent 10px 20px); opacity: .35; }
+/* sheet of paper with a boiling ink edge */
+.paper { position: relative; background: var(--stripes-midnight); }
+.paper::before { content: ''; position: absolute; inset: -6px; border: 3px solid var(--stripes-bone); filter: url(#ink-strong); pointer-events: none; }
+
+/* film grain over everything */
+.grain {
+  position: fixed; inset: -50%; pointer-events: none; z-index: 100; opacity: .09; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain .5s steps(6) infinite;
+}
+@keyframes grain { 0% { transform: translate(0, 0) } 33% { transform: translate(-4%, 3%) } 66% { transform: translate(3%, -5%) } 100% { transform: translate(0, 0) } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+section[id], footer { scroll-margin-top: 72px; }

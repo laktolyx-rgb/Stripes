@@ -30,4 +30,6 @@ Commands: `:colorscheme stripes-night`, `stripes-bone`, `stripes-void`, `stripes
 
 lualine: `options = { theme = "stripes" }`.
 
+Dashboard art: `require("stripes.mortimer").header` (snacks) or `.lines` (alpha).
+
 Supports Treesitter, LSP semantic tokens, diagnostics, gitsigns, telescope, nvim-tree, neo-tree, which-key, indent-blankline, nvim-cmp, blink.cmp, mini, notify, lazy and snacks.
