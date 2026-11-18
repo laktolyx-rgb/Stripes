@@ -1,0 +1,7 @@
+id = "stripes"
+name = "Stripes"
+version = "0.1.0"
+schema_version = 1
+authors = ["Stripes contributors"]
+description = "A gothic black & white theme with a single drop of blood."
+repository = "https://github.com/stripes-theme/stripes"

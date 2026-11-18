@@ -1,0 +1,64 @@
+{
+  "name": "stripes",
+  "displayName": "Stripes Theme",
+  "description": "A gothic black & white theme with a single drop of blood. Night, Bone, Void and Blood (high contrast).",
+  "version": "0.1.0",
+  "publisher": "stripes-theme",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#101010",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "light",
+    "gothic",
+    "monochrome",
+    "black and white",
+    "high contrast",
+    "oled",
+    "minimal",
+    "red"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stripes-theme/stripes",
+    "directory": "ports/vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/stripes-theme/stripes/issues"
+  },
+  "homepage": "https://github.com/stripes-theme/stripes#readme",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Stripes Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/stripes-night-color-theme.json"
+      },
+      {
+        "label": "Stripes Bone",
+        "uiTheme": "vs",
+        "path": "./themes/stripes-bone-color-theme.json"
+      },
+      {
+        "label": "Stripes Void",
+        "uiTheme": "vs-dark",
+        "path": "./themes/stripes-void-color-theme.json"
+      },
+      {
+        "label": "Stripes Blood",
+        "uiTheme": "vs-dark",
+        "path": "./themes/stripes-blood-color-theme.json"
+      }
+    ]
+  }
+}

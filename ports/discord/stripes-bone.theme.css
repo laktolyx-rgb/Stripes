@@ -1,0 +1,91 @@
+/**
+ * @name Stripes Bone
+ * @author Stripes contributors
+ * @version 0.1.0
+ * @description Old parchment and dried ink. The light variant. Black and white, and one drop of blood.
+ * @source https://github.com/stripes-theme/stripes
+ * @website https://github.com/stripes-theme/stripes
+ */
+
+:root, .theme-dark, .theme-light, .theme-darker, .theme-midnight, .visual-refresh {
+  /* classic */
+  --background-primary: #ece7dc;
+  --background-secondary: #e3ddd0;
+  --background-secondary-alt: #d6cfbf;
+  --background-tertiary: #e3ddd0;
+  --background-floating: #e3ddd0;
+  --background-nested-floating: #e3ddd0;
+  --background-accent: #c9c0ad;
+  --background-mobile-primary: #ece7dc;
+  --background-mobile-secondary: #e3ddd0;
+  --background-modifier-hover: #c9c0ad80;
+  --background-modifier-active: #c9c0adcc;
+  --background-modifier-selected: #c9c0ad;
+  --background-modifier-accent: #d6cfbf;
+  --background-message-hover: #d6cfbf99;
+  --background-mentioned: #a32b2b1a;
+  --background-mentioned-hover: #a32b2b26;
+  --channeltextarea-background: #e3ddd0;
+  --modal-background: #e3ddd0;
+  --modal-footer-background: #ece7dc;
+  --input-background: #ece7dc;
+  --deprecated-card-bg: #e3ddd0;
+  --text-normal: #1a1a1a;
+  --text-muted: #626262;
+  --text-link: #a32b2b;
+  --text-positive: #1a1a1a;
+  --text-warning: #000000;
+  --text-danger: #8f1f1f;
+  --text-brand: #a32b2b;
+  --header-primary: #000000;
+  --header-secondary: #3d3d3d;
+  --interactive-normal: #3d3d3d;
+  --interactive-hover: #1a1a1a;
+  --interactive-active: #000000;
+  --interactive-muted: #a39a88;
+  --channels-default: #626262;
+  --channel-icon: #626262;
+  --scrollbar-thin-thumb: #a39a88;
+  --scrollbar-auto-thumb: #a39a88;
+  --scrollbar-auto-track: #e3ddd0;
+  --brand-experiment: #a32b2b;
+  --brand-500: #a32b2b;
+  --brand-560: #8f1f1f;
+  --mention-foreground: #a32b2b;
+  --mention-background: #a32b2b26;
+  --info-danger-foreground: #8f1f1f;
+  --status-danger: #8f1f1f;
+  --button-danger-background: #a32b2b;
+  --button-filled-brand-background: #a32b2b;
+  --button-filled-brand-background-hover: #8f1f1f;
+  --button-filled-brand-text: #ece7dc;
+  --button-secondary-background: #d6cfbf;
+  --control-brand-foreground: #a32b2b;
+  --focus-primary: #a32b2b;
+  --border-subtle: #d6cfbf;
+  --border-faint: #d6cfbf;
+  --border-strong: #a39a88;
+
+  /* 2025 visual refresh */
+  --background-base-lowest: #ece7dc;
+  --background-base-lower: #e3ddd0;
+  --background-base-low: #e3ddd0;
+  --background-surface-high: #e3ddd0;
+  --background-surface-higher: #d6cfbf;
+  --background-surface-highest: #c9c0ad;
+  --chat-background-default: #ece7dc;
+  --text-default: #1a1a1a;
+  --text-subtle: #3d3d3d;
+  --text-strong: #000000;
+  --icon-default: #3d3d3d;
+  --icon-strong: #000000;
+}
+
+/* Monochrome role colors would break meaning; we only tint the user's own mentions in blood. */
+::selection { background: #a32b2b59; color: #000000; }
+code, pre { font-family: 'JetBrains Mono', Consolas, monospace !important; }
+.hljs-keyword, .hljs-built_in { color: #000000; font-weight: 700; }
+.hljs-string { color: #a32b2b; }
+.hljs-comment { color: #626262; font-style: italic; }
+.hljs-title, .hljs-function { color: #3d3d3d; }
+.hljs-number, .hljs-literal { color: #000000; }

@@ -1,0 +1,161 @@
+{
+  "version": "0.1.0",
+  "ports": [
+    {
+      "id": "alacritty",
+      "name": "Alacritty",
+      "category": "terminal",
+      "homepage": "https://alacritty.org",
+      "install": "`[general] import = [\"~/.config/alacritty/stripes-night.toml\"]`",
+      "files": [
+        "README.md",
+        "stripes-blood.toml",
+        "stripes-bone.toml",
+        "stripes-night.toml",
+        "stripes-void.toml"
+      ]
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "category": "app",
+      "homepage": "https://discord.com",
+      "install": "Vencord: Themes → Online Themes → paste the raw URL of `stripes-night.theme.css`",
+      "files": [
+        "README.md",
+        "stripes-blood.theme.css",
+        "stripes-bone.theme.css",
+        "stripes-night.theme.css",
+        "stripes-void.theme.css"
+      ]
+    },
+    {
+      "id": "ghostty",
+      "name": "Ghostty",
+      "category": "terminal",
+      "homepage": "https://ghostty.org",
+      "install": "Copy `themes/*` to `~/.config/ghostty/themes/`, then `theme = stripes-night`",
+      "files": [
+        "README.md",
+        "themes/stripes-blood",
+        "themes/stripes-bone",
+        "themes/stripes-night",
+        "themes/stripes-void"
+      ]
+    },
+    {
+      "id": "jetbrains",
+      "name": "JetBrains IDEs",
+      "category": "editor",
+      "homepage": "https://www.jetbrains.com",
+      "install": "Settings → Plugins → Marketplace → \"Stripes\"",
+      "files": [
+        "README.md",
+        "build.gradle.kts",
+        "gradle.properties",
+        "settings.gradle.kts",
+        "src/main/resources/META-INF/plugin.xml",
+        "src/main/resources/themes/stripes_blood.theme.json",
+        "src/main/resources/themes/stripes_blood.xml",
+        "src/main/resources/themes/stripes_bone.theme.json",
+        "src/main/resources/themes/stripes_bone.xml",
+        "src/main/resources/themes/stripes_night.theme.json",
+        "src/main/resources/themes/stripes_night.xml",
+        "src/main/resources/themes/stripes_void.theme.json",
+        "src/main/resources/themes/stripes_void.xml"
+      ]
+    },
+    {
+      "id": "kitty",
+      "name": "Kitty",
+      "category": "terminal",
+      "homepage": "https://sw.kovidgoyal.net/kitty/",
+      "install": "`include stripes-night.conf` in `kitty.conf`",
+      "files": [
+        "README.md",
+        "stripes-blood.conf",
+        "stripes-bone.conf",
+        "stripes-night.conf",
+        "stripes-void.conf"
+      ]
+    },
+    {
+      "id": "nvim",
+      "name": "Neovim",
+      "category": "editor",
+      "homepage": "https://neovim.io",
+      "install": "lazy.nvim: see ports/nvim/README.md",
+      "files": [
+        "README.md",
+        "colors/stripes-blood.lua",
+        "colors/stripes-bone.lua",
+        "colors/stripes-night.lua",
+        "colors/stripes-void.lua",
+        "colors/stripes.lua",
+        "lua/lualine/themes/stripes.lua",
+        "lua/stripes/groups.lua",
+        "lua/stripes/init.lua",
+        "lua/stripes/palette.lua"
+      ]
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "category": "app",
+      "homepage": "https://obsidian.md",
+      "install": "Settings → Appearance → Themes → Manage → \"Stripes\"",
+      "files": [
+        "README.md",
+        "manifest.json",
+        "theme.css"
+      ]
+    },
+    {
+      "id": "vscode",
+      "name": "Visual Studio Code",
+      "category": "editor",
+      "homepage": "https://code.visualstudio.com",
+      "install": "Marketplace / Open VSX: search \"Stripes\"",
+      "files": [
+        ".vscodeignore",
+        "CHANGELOG.md",
+        "LICENSE",
+        "README.md",
+        "icon.png",
+        "package.json",
+        "themes/stripes-blood-color-theme.json",
+        "themes/stripes-bone-color-theme.json",
+        "themes/stripes-night-color-theme.json",
+        "themes/stripes-void-color-theme.json"
+      ]
+    },
+    {
+      "id": "windows-terminal",
+      "name": "Windows Terminal",
+      "category": "terminal",
+      "homepage": "https://github.com/microsoft/terminal",
+      "install": "Copy `stripes.json` to `%LOCALAPPDATA%MicrosoftWindows TerminalFragmentsStripes`",
+      "files": [
+        "README.md",
+        "schemes/stripes-blood.json",
+        "schemes/stripes-bone.json",
+        "schemes/stripes-night.json",
+        "schemes/stripes-void.json",
+        "stripes.json"
+      ]
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "category": "editor",
+      "homepage": "https://zed.dev",
+      "install": "Zed → Extensions → search \"Stripes\"",
+      "files": [
+        "LICENSE",
+        "README.md",
+        "extension.toml",
+        "themes/stripes.json"
+      ]
+    }
+  ]
+}

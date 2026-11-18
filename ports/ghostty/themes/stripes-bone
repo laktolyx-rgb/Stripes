@@ -1,0 +1,23 @@
+# Stripes Bone. Old parchment and dried ink. The light variant.
+background = #ece7dc
+foreground = #1a1a1a
+cursor-color = #000000
+cursor-text = #ece7dc
+selection-background = #c9c0ad
+selection-foreground = #1a1a1a
+palette = 0=#1a1a1a
+palette = 1=#a32b2b
+palette = 2=#4a4a4a
+palette = 3=#3d3d3d
+palette = 4=#5e5e5e
+palette = 5=#8a4a4a
+palette = 6=#555555
+palette = 7=#c9c0ad
+palette = 8=#666666
+palette = 9=#8f1f1f
+palette = 10=#2e2e2e
+palette = 11=#262626
+palette = 12=#454545
+palette = 13=#733838
+palette = 14=#3a3a3a
+palette = 15=#a39a88

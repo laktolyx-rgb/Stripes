@@ -1,0 +1,23 @@
+{
+  "name": "Stripes Night",
+  "background": "#101010",
+  "foreground": "#ececec",
+  "cursorColor": "#ffffff",
+  "selectionBackground": "#2a2a2a",
+  "black": "#1f1f1f",
+  "brightBlack": "#5c5c5c",
+  "red": "#d15858",
+  "brightRed": "#e57373",
+  "green": "#b0b0b0",
+  "brightGreen": "#c8c8c8",
+  "yellow": "#d4d4d4",
+  "brightYellow": "#e6e6e6",
+  "blue": "#8f8f8f",
+  "brightBlue": "#a8a8a8",
+  "purple": "#c27a7a",
+  "brightPurple": "#d69a9a",
+  "cyan": "#9e9e9e",
+  "brightCyan": "#b8b8b8",
+  "white": "#ececec",
+  "brightWhite": "#ffffff"
+}

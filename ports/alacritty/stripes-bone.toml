@@ -1,0 +1,59 @@
+# Stripes Bone. Old parchment and dried ink. The light variant.
+
+[colors.primary]
+background = "#ece7dc"
+foreground = "#1a1a1a"
+dim_foreground = "#626262"
+bright_foreground = "#000000"
+
+[colors.cursor]
+text = "#ece7dc"
+cursor = "#000000"
+
+[colors.vi_mode_cursor]
+text = "#ece7dc"
+cursor = "#a32b2b"
+
+[colors.selection]
+text = "#1a1a1a"
+background = "#c9c0ad"
+
+[colors.search.matches]
+foreground = "#1a1a1a"
+background = "#e6c9c4"
+
+[colors.search.focused_match]
+foreground = "#ece7dc"
+background = "#a32b2b"
+
+[colors.hints.start]
+foreground = "#ece7dc"
+background = "#a32b2b"
+
+[colors.hints.end]
+foreground = "#ece7dc"
+background = "#3d3d3d"
+
+[colors.footer_bar]
+foreground = "#1a1a1a"
+background = "#e3ddd0"
+
+[colors.normal]
+black = "#1a1a1a"
+red = "#a32b2b"
+green = "#4a4a4a"
+yellow = "#3d3d3d"
+blue = "#5e5e5e"
+magenta = "#8a4a4a"
+cyan = "#555555"
+white = "#c9c0ad"
+
+[colors.bright]
+black = "#666666"
+red = "#8f1f1f"
+green = "#2e2e2e"
+yellow = "#262626"
+blue = "#454545"
+magenta = "#733838"
+cyan = "#3a3a3a"
+white = "#a39a88"

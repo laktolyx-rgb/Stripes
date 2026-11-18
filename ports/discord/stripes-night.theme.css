@@ -1,0 +1,91 @@
+/**
+ * @name Stripes Night
+ * @author Stripes contributors
+ * @version 0.1.0
+ * @description The original. Charcoal, bone and blood. Black and white, and one drop of blood.
+ * @source https://github.com/stripes-theme/stripes
+ * @website https://github.com/stripes-theme/stripes
+ */
+
+:root, .theme-dark, .theme-light, .theme-darker, .theme-midnight, .visual-refresh {
+  /* classic */
+  --background-primary: #101010;
+  --background-secondary: #161616;
+  --background-secondary-alt: #1f1f1f;
+  --background-tertiary: #161616;
+  --background-floating: #161616;
+  --background-nested-floating: #161616;
+  --background-accent: #2a2a2a;
+  --background-mobile-primary: #101010;
+  --background-mobile-secondary: #161616;
+  --background-modifier-hover: #2a2a2a80;
+  --background-modifier-active: #2a2a2acc;
+  --background-modifier-selected: #2a2a2a;
+  --background-modifier-accent: #1f1f1f;
+  --background-message-hover: #1f1f1f99;
+  --background-mentioned: #d158581a;
+  --background-mentioned-hover: #d1585826;
+  --channeltextarea-background: #161616;
+  --modal-background: #161616;
+  --modal-footer-background: #101010;
+  --input-background: #101010;
+  --deprecated-card-bg: #161616;
+  --text-normal: #ececec;
+  --text-muted: #7f7f7f;
+  --text-link: #d15858;
+  --text-positive: #ececec;
+  --text-warning: #ffffff;
+  --text-danger: #e57373;
+  --text-brand: #d15858;
+  --header-primary: #ffffff;
+  --header-secondary: #bdbdbd;
+  --interactive-normal: #bdbdbd;
+  --interactive-hover: #ececec;
+  --interactive-active: #ffffff;
+  --interactive-muted: #5c5c5c;
+  --channels-default: #7f7f7f;
+  --channel-icon: #7f7f7f;
+  --scrollbar-thin-thumb: #5c5c5c;
+  --scrollbar-auto-thumb: #5c5c5c;
+  --scrollbar-auto-track: #161616;
+  --brand-experiment: #d15858;
+  --brand-500: #d15858;
+  --brand-560: #e57373;
+  --mention-foreground: #d15858;
+  --mention-background: #d1585826;
+  --info-danger-foreground: #e57373;
+  --status-danger: #e57373;
+  --button-danger-background: #d15858;
+  --button-filled-brand-background: #d15858;
+  --button-filled-brand-background-hover: #e57373;
+  --button-filled-brand-text: #101010;
+  --button-secondary-background: #1f1f1f;
+  --control-brand-foreground: #d15858;
+  --focus-primary: #d15858;
+  --border-subtle: #1f1f1f;
+  --border-faint: #1f1f1f;
+  --border-strong: #5c5c5c;
+
+  /* 2025 visual refresh */
+  --background-base-lowest: #101010;
+  --background-base-lower: #161616;
+  --background-base-low: #161616;
+  --background-surface-high: #161616;
+  --background-surface-higher: #1f1f1f;
+  --background-surface-highest: #2a2a2a;
+  --chat-background-default: #101010;
+  --text-default: #ececec;
+  --text-subtle: #bdbdbd;
+  --text-strong: #ffffff;
+  --icon-default: #bdbdbd;
+  --icon-strong: #ffffff;
+}
+
+/* Monochrome role colors would break meaning; we only tint the user's own mentions in blood. */
+::selection { background: #d1585859; color: #ffffff; }
+code, pre { font-family: 'JetBrains Mono', Consolas, monospace !important; }
+.hljs-keyword, .hljs-built_in { color: #ffffff; font-weight: 700; }
+.hljs-string { color: #d15858; }
+.hljs-comment { color: #7f7f7f; font-style: italic; }
+.hljs-title, .hljs-function { color: #bdbdbd; }
+.hljs-number, .hljs-literal { color: #ffffff; }

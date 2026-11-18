@@ -1,0 +1,59 @@
+# Stripes Night. The original. Charcoal, bone and blood.
+
+[colors.primary]
+background = "#101010"
+foreground = "#ececec"
+dim_foreground = "#7f7f7f"
+bright_foreground = "#ffffff"
+
+[colors.cursor]
+text = "#101010"
+cursor = "#ffffff"
+
+[colors.vi_mode_cursor]
+text = "#101010"
+cursor = "#d15858"
+
+[colors.selection]
+text = "#ececec"
+background = "#2a2a2a"
+
+[colors.search.matches]
+foreground = "#ececec"
+background = "#3d1a1a"
+
+[colors.search.focused_match]
+foreground = "#101010"
+background = "#d15858"
+
+[colors.hints.start]
+foreground = "#101010"
+background = "#d15858"
+
+[colors.hints.end]
+foreground = "#101010"
+background = "#bdbdbd"
+
+[colors.footer_bar]
+foreground = "#ececec"
+background = "#161616"
+
+[colors.normal]
+black = "#1f1f1f"
+red = "#d15858"
+green = "#b0b0b0"
+yellow = "#d4d4d4"
+blue = "#8f8f8f"
+magenta = "#c27a7a"
+cyan = "#9e9e9e"
+white = "#ececec"
+
+[colors.bright]
+black = "#5c5c5c"
+red = "#e57373"
+green = "#c8c8c8"
+yellow = "#e6e6e6"
+blue = "#a8a8a8"
+magenta = "#d69a9a"
+cyan = "#b8b8b8"
+white = "#ffffff"

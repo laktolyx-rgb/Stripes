@@ -1,0 +1,1 @@
+require("stripes").load("night")

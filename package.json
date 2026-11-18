@@ -2,13 +2,21 @@
   "name": "stripes-monorepo",
   "private": true,
   "type": "module",
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "validate": "node packages/builder/src/cli.js validate",
     "validate:all": "node packages/builder/src/cli.js validate --verbose",
     "build:palette": "npm run build -w @stripes-theme/palette",
-    "build": "npm run build:palette",
-    "test": "node --test"
+    "build:ports": "node packages/builder/src/cli.js build",
+    "build": "npm run build:palette && npm run build:ports",
+    "check": "node packages/builder/src/cli.js check",
+    "new": "node packages/builder/src/cli.js new",
+    "package:vscode": "cd ports/vscode && npx -y @vscode/vsce@3.2.1 package --no-dependencies --out ../../stripes-vscode.vsix",
+    "test": "node --test test/"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

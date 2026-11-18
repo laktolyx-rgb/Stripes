@@ -1,0 +1,223 @@
+{
+  "name": "Stripes Blood",
+  "dark": true,
+  "author": "Stripes contributors",
+  "editorScheme": "/themes/stripes_blood.xml",
+  "colors": {
+    "midnight": "#000000",
+    "crypt": "#0a0a0a",
+    "grave": "#1a1a1a",
+    "tomb": "#3a0d0d",
+    "ash": "#8a8a8a",
+    "fog": "#b3b3b3",
+    "smoke": "#e0e0e0",
+    "bone": "#ffffff",
+    "ivory": "#ffffff",
+    "blood": "#ff6b6b",
+    "ember": "#ff8a8a",
+    "scar": "#4d0f0f"
+  },
+  "ui": {
+    "*": {
+      "background": "crypt",
+      "foreground": "bone",
+      "infoForeground": "fog",
+      "selectionBackground": "tomb",
+      "selectionForeground": "ivory",
+      "selectionInactiveBackground": "grave",
+      "selectionBackgroundInactive": "grave",
+      "hoverBackground": "grave",
+      "borderColor": "grave",
+      "separatorColor": "grave",
+      "disabledForeground": "ash",
+      "disabledBackground": "crypt",
+      "focusColor": "blood",
+      "focusedBorderColor": "blood",
+      "lightSelectionBackground": "tomb",
+      "inactiveBackground": "crypt",
+      "acceleratorForeground": "fog"
+    },
+    "Borders": {
+      "color": "grave",
+      "ContrastBorderColor": "grave"
+    },
+    "Button": {
+      "startBackground": "grave",
+      "endBackground": "grave",
+      "startBorderColor": "ash",
+      "endBorderColor": "ash",
+      "foreground": "bone",
+      "default": {
+        "startBackground": "blood",
+        "endBackground": "blood",
+        "foreground": "midnight",
+        "startBorderColor": "blood",
+        "endBorderColor": "blood",
+        "focusedBorderColor": "ivory"
+      }
+    },
+    "ComboBox": {
+      "background": "midnight",
+      "nonEditableBackground": "midnight",
+      "ArrowButton": {
+        "background": "midnight",
+        "nonEditableBackground": "midnight"
+      }
+    },
+    "TextField": {
+      "background": "midnight"
+    },
+    "TextArea": {
+      "background": "midnight"
+    },
+    "EditorPane": {
+      "background": "midnight"
+    },
+    "Component": {
+      "focusColor": "blood",
+      "focusedBorderColor": "blood",
+      "borderColor": "grave",
+      "errorFocusColor": "ember",
+      "inactiveErrorFocusColor": "scar"
+    },
+    "Link": {
+      "activeForeground": "blood",
+      "hoverForeground": "ember",
+      "pressedForeground": "ember",
+      "visitedForeground": "blood"
+    },
+    "ProgressBar": {
+      "progressColor": "blood",
+      "indeterminateStartColor": "blood",
+      "indeterminateEndColor": "scar",
+      "trackColor": "grave"
+    },
+    "ScrollBar": {
+      "Mac": {
+        "thumbColor": "#5c5c5c66",
+        "hoverThumbColor": "#5c5c5caa"
+      },
+      "thumbColor": "#5c5c5c66",
+      "hoverThumbColor": "#5c5c5caa"
+    },
+    "TabbedPane": {
+      "underlineColor": "blood",
+      "focusColor": "grave",
+      "hoverColor": "grave"
+    },
+    "EditorTabs": {
+      "underlinedTabBackground": "midnight",
+      "underlineColor": "blood",
+      "inactiveUnderlineColor": "ash",
+      "background": "crypt",
+      "hoverBackground": "midnight"
+    },
+    "ToolWindow": {
+      "Header": {
+        "background": "crypt",
+        "inactiveBackground": "crypt"
+      },
+      "HeaderTab": {
+        "selectedInactiveBackground": "grave",
+        "hoverBackground": "grave",
+        "underlineColor": "blood"
+      }
+    },
+    "MainToolbar": {
+      "background": "crypt",
+      "inactiveBackground": "crypt"
+    },
+    "StatusBar": {
+      "background": "crypt",
+      "borderColor": "grave"
+    },
+    "Tree": {
+      "background": "crypt",
+      "selectionBackground": "tomb",
+      "selectionInactiveBackground": "grave",
+      "rowHeight": 24
+    },
+    "List": {
+      "background": "crypt",
+      "selectionBackground": "tomb",
+      "selectionInactiveBackground": "grave"
+    },
+    "Table": {
+      "background": "crypt",
+      "stripeColor": "midnight",
+      "selectionBackground": "tomb"
+    },
+    "Popup": {
+      "background": "crypt",
+      "borderColor": "grave",
+      "Header": {
+        "activeBackground": "crypt",
+        "inactiveBackground": "crypt"
+      }
+    },
+    "PopupMenu": {
+      "background": "crypt",
+      "selectionBackground": "tomb"
+    },
+    "Menu": {
+      "background": "crypt",
+      "selectionBackground": "tomb",
+      "separatorColor": "grave"
+    },
+    "MenuBar": {
+      "borderColor": "grave"
+    },
+    "Notification": {
+      "background": "crypt",
+      "borderColor": "grave",
+      "errorBackground": "scar",
+      "errorBorderColor": "ember"
+    },
+    "Counter": {
+      "background": "blood",
+      "foreground": "midnight"
+    },
+    "ToolTip": {
+      "background": "crypt",
+      "borderColor": "grave"
+    },
+    "SearchMatch": {
+      "startBackground": "blood",
+      "endBackground": "blood"
+    },
+    "Plugins": {
+      "tagBackground": "grave",
+      "tagForeground": "bone",
+      "Button": {
+        "installBackground": "blood",
+        "installForeground": "midnight",
+        "installBorderColor": "blood"
+      }
+    },
+    "FileColor": {
+      "Yellow": "grave",
+      "Green": "grave",
+      "Blue": "grave",
+      "Rose": "scar",
+      "Orange": "scar",
+      "Violet": "grave"
+    },
+    "VersionControl": {
+      "GitGreen": "bone",
+      "GitLog": {
+        "headIconColor": "blood",
+        "localBranchIconColor": "ivory",
+        "remoteBranchIconColor": "smoke",
+        "tagIconColor": "fog"
+      }
+    }
+  },
+  "icons": {
+    "ColorPalette": {
+      "Actions.Red": "#ff6b6b",
+      "Actions.Grey": "#e0e0e0",
+      "Objects.Red": "#ff6b6b",
+      "Objects.Grey": "#e0e0e0"
+    }
+  }
+}

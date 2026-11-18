@@ -1,0 +1,162 @@
+{
+  "schemes": [
+    {
+      "name": "Stripes Night",
+      "background": "#101010",
+      "foreground": "#ececec",
+      "cursorColor": "#ffffff",
+      "selectionBackground": "#2a2a2a",
+      "black": "#1f1f1f",
+      "brightBlack": "#5c5c5c",
+      "red": "#d15858",
+      "brightRed": "#e57373",
+      "green": "#b0b0b0",
+      "brightGreen": "#c8c8c8",
+      "yellow": "#d4d4d4",
+      "brightYellow": "#e6e6e6",
+      "blue": "#8f8f8f",
+      "brightBlue": "#a8a8a8",
+      "purple": "#c27a7a",
+      "brightPurple": "#d69a9a",
+      "cyan": "#9e9e9e",
+      "brightCyan": "#b8b8b8",
+      "white": "#ececec",
+      "brightWhite": "#ffffff"
+    },
+    {
+      "name": "Stripes Bone",
+      "background": "#ece7dc",
+      "foreground": "#1a1a1a",
+      "cursorColor": "#000000",
+      "selectionBackground": "#c9c0ad",
+      "black": "#1a1a1a",
+      "brightBlack": "#666666",
+      "red": "#a32b2b",
+      "brightRed": "#8f1f1f",
+      "green": "#4a4a4a",
+      "brightGreen": "#2e2e2e",
+      "yellow": "#3d3d3d",
+      "brightYellow": "#262626",
+      "blue": "#5e5e5e",
+      "brightBlue": "#454545",
+      "purple": "#8a4a4a",
+      "brightPurple": "#733838",
+      "cyan": "#555555",
+      "brightCyan": "#3a3a3a",
+      "white": "#c9c0ad",
+      "brightWhite": "#a39a88"
+    },
+    {
+      "name": "Stripes Void",
+      "background": "#000000",
+      "foreground": "#ececec",
+      "cursorColor": "#ffffff",
+      "selectionBackground": "#1f1f1f",
+      "black": "#121212",
+      "brightBlack": "#4d4d4d",
+      "red": "#d15858",
+      "brightRed": "#e57373",
+      "green": "#b0b0b0",
+      "brightGreen": "#c8c8c8",
+      "yellow": "#d4d4d4",
+      "brightYellow": "#e6e6e6",
+      "blue": "#8f8f8f",
+      "brightBlue": "#a8a8a8",
+      "purple": "#c27a7a",
+      "brightPurple": "#d69a9a",
+      "cyan": "#9e9e9e",
+      "brightCyan": "#b8b8b8",
+      "white": "#ececec",
+      "brightWhite": "#ffffff"
+    },
+    {
+      "name": "Stripes Blood",
+      "background": "#000000",
+      "foreground": "#ffffff",
+      "cursorColor": "#ffffff",
+      "selectionBackground": "#3a0d0d",
+      "black": "#1a1a1a",
+      "brightBlack": "#8a8a8a",
+      "red": "#ff6b6b",
+      "brightRed": "#ff8a8a",
+      "green": "#d0d0d0",
+      "brightGreen": "#e0e0e0",
+      "yellow": "#e8e8e8",
+      "brightYellow": "#f5f5f5",
+      "blue": "#b3b3b3",
+      "brightBlue": "#cccccc",
+      "purple": "#ff9e9e",
+      "brightPurple": "#ffbdbd",
+      "cyan": "#c4c4c4",
+      "brightCyan": "#d9d9d9",
+      "white": "#ffffff",
+      "brightWhite": "#ffffff"
+    }
+  ],
+  "themes": [
+    {
+      "name": "Stripes Night",
+      "window": {
+        "applicationTheme": "dark",
+        "useMica": false
+      },
+      "tab": {
+        "background": "#101010ff",
+        "unfocusedBackground": "#161616ff",
+        "showCloseButton": "hover"
+      },
+      "tabRow": {
+        "background": "#161616ff",
+        "unfocusedBackground": "#161616ff"
+      }
+    },
+    {
+      "name": "Stripes Bone",
+      "window": {
+        "applicationTheme": "light",
+        "useMica": false
+      },
+      "tab": {
+        "background": "#ece7dcff",
+        "unfocusedBackground": "#e3ddd0ff",
+        "showCloseButton": "hover"
+      },
+      "tabRow": {
+        "background": "#e3ddd0ff",
+        "unfocusedBackground": "#e3ddd0ff"
+      }
+    },
+    {
+      "name": "Stripes Void",
+      "window": {
+        "applicationTheme": "dark",
+        "useMica": false
+      },
+      "tab": {
+        "background": "#000000ff",
+        "unfocusedBackground": "#080808ff",
+        "showCloseButton": "hover"
+      },
+      "tabRow": {
+        "background": "#080808ff",
+        "unfocusedBackground": "#080808ff"
+      }
+    },
+    {
+      "name": "Stripes Blood",
+      "window": {
+        "applicationTheme": "dark",
+        "useMica": false
+      },
+      "tab": {
+        "background": "#000000ff",
+        "unfocusedBackground": "#0a0a0aff",
+        "showCloseButton": "hover"
+      },
+      "tabRow": {
+        "background": "#0a0a0aff",
+        "unfocusedBackground": "#0a0a0aff"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Stripes Blood",
+  "background": "#000000",
+  "foreground": "#ffffff",
+  "cursorColor": "#ffffff",
+  "selectionBackground": "#3a0d0d",
+  "black": "#1a1a1a",
+  "brightBlack": "#8a8a8a",
+  "red": "#ff6b6b",
+  "brightRed": "#ff8a8a",
+  "green": "#d0d0d0",
+  "brightGreen": "#e0e0e0",
+  "yellow": "#e8e8e8",
+  "brightYellow": "#f5f5f5",
+  "blue": "#b3b3b3",
+  "brightBlue": "#cccccc",
+  "purple": "#ff9e9e",
+  "brightPurple": "#ffbdbd",
+  "cyan": "#c4c4c4",
+  "brightCyan": "#d9d9d9",
+  "white": "#ffffff",
+  "brightWhite": "#ffffff"
+}

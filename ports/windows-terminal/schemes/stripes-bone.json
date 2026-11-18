@@ -1,0 +1,23 @@
+{
+  "name": "Stripes Bone",
+  "background": "#ece7dc",
+  "foreground": "#1a1a1a",
+  "cursorColor": "#000000",
+  "selectionBackground": "#c9c0ad",
+  "black": "#1a1a1a",
+  "brightBlack": "#666666",
+  "red": "#a32b2b",
+  "brightRed": "#8f1f1f",
+  "green": "#4a4a4a",
+  "brightGreen": "#2e2e2e",
+  "yellow": "#3d3d3d",
+  "brightYellow": "#262626",
+  "blue": "#5e5e5e",
+  "brightBlue": "#454545",
+  "purple": "#8a4a4a",
+  "brightPurple": "#733838",
+  "cyan": "#555555",
+  "brightCyan": "#3a3a3a",
+  "white": "#c9c0ad",
+  "brightWhite": "#a39a88"
+}
