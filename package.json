@@ -15,7 +15,7 @@
     "check": "node packages/builder/src/cli.js check",
     "new": "node packages/builder/src/cli.js new",
     "package:vscode": "cd ports/vscode && npx -y @vscode/vsce@4.1.0 package --no-dependencies --out ../../stripes-vscode.vsix",
-    "test": "node --test test/",
+    "test": "node --test \"test/**/*.test.js\"",
     "site:dev": "npm run dev -w @stripes-theme/site",
     "site:build": "npm run build -w @stripes-theme/site",
     "assets": "node scripts/render-assets.mjs",
